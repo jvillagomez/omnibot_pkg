@@ -1,0 +1,8 @@
+<launch>
+  <!--  Start test velocityPublisher-->
+  <node name="velocityPublisher_node" pkg="omnibot" type="velocityPublisher_node.py" />
+  <!--  Start Ultrasound-->
+  <!-- <node name="ultrasoundPublisher_node" pkg="omnibot" type="ultrasoundPublisher_node.py" /> -->
+  <!--  Start ROS Serial-->
+  <node name="arduino_node" pkg="omnibot" type="start_rosserial.sh" />
+</launch>

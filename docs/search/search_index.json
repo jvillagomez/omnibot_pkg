@@ -1,0 +1,224 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "Overview\n\n\n\n\n\n\n\nRobot Specifications:\n\n\n\n\nConstrained radially to 13 cm\n\n\nConstrained to a maximum of 26 cm tall, double of radius\n\n\nWeighs less than 9 kg\n\n\nOperational for at least 2 hours\n\n\nBasic motion\n\n\nOmnidirectional (ability to move in any direction)\n\n\nAbility to avoid obstacles\n\n\nEquipped with various sensors for autonomous motion and path-planning capabilities\n\n\nEquipped with onboard computing capabilities\n\n\nRequired to be modular to accommodate future upgrades\n\n\nInclude an experimental mode where users can upload their own robot control algorithm for testing and learning", 
+            "title": "Overview"
+        }, 
+        {
+            "location": "/#overview", 
+            "text": "", 
+            "title": "Overview"
+        }, 
+        {
+            "location": "/#robot-specifications", 
+            "text": "Constrained radially to 13 cm  Constrained to a maximum of 26 cm tall, double of radius  Weighs less than 9 kg  Operational for at least 2 hours  Basic motion  Omnidirectional (ability to move in any direction)  Ability to avoid obstacles  Equipped with various sensors for autonomous motion and path-planning capabilities  Equipped with onboard computing capabilities  Required to be modular to accommodate future upgrades  Include an experimental mode where users can upload their own robot control algorithm for testing and learning", 
+            "title": "Robot Specifications:"
+        }, 
+        {
+            "location": "/systemArchitecture/", 
+            "text": "System Architecture\n\n\nHardware\n\n\n\n\n\n\nDummy\n\n\n\n\nROS", 
+            "title": "System Architecture"
+        }, 
+        {
+            "location": "/systemArchitecture/#system-architecture", 
+            "text": "", 
+            "title": "System Architecture"
+        }, 
+        {
+            "location": "/systemArchitecture/#hardware", 
+            "text": "Dummy", 
+            "title": "Hardware"
+        }, 
+        {
+            "location": "/systemArchitecture/#ros", 
+            "text": "", 
+            "title": "ROS"
+        }, 
+        {
+            "location": "/gettingStarted/", 
+            "text": "Getting Started\n\n\nBelow are instructions and suggestions for leveraging the OmniRobot ROS package.\n\n\nFor any issues, questions, suggestions, or failures, please contact us via the project slack channel.\n\n\nPrerequisites\n\n\nSoftware\n\n\n\n\nRobotic Operating System (ROS)\n - Basic understanding of ROS is necessary to work with this package.\n\n\nThreads/processes\n - Basic knowledge of tasks, threads, and processes is essential,\nbut not neccesary.\n\n\nUbuntu OS\n: ROS and Arduino can be utilized on Windows/Mac, but a Linux distro is preferred. The following instructions will assume you have Ubuntu 16.04 on your desktop/laptop and Ubuntu Mate on your Pi.\n\n\n\n\nHardware\n\n\nThe following materials will be necessary in assembling the OmniRobot:\n\n\n\n\nJumper cables\n\n\nPower supply for the Arduino\n\n\nPower Supply for the Pi\n\n\nJumper cables\n\n\nWifi Router\n\n\nComputer with SSH access\n\n\n\n\nInstalling\n\n\nInstalling Omnibot pkg on Pi\n\n\n\n\nmkdocs new [dir-name]\n - Create a new project.\n\n\n\n\nDeploying ROSserial (Arduino) script\n\n\n\n\nmkdocs new [dir-name]\n - Create a new project.\n\n\n\n\nRunning the Project\n\n\nRunning via ROSlaunch\n\n\n\n\nmkdocs new [dir-name]\n - Create a new project.\n\n\n\n\nRunning Manually\n\n\n\n\nmkdocs new [dir-name]\n - Create a new project.\n\n\n\n\nConfirm Successful Launch\n\n\nConfirm via RQT\n\n\nConfirm via ROStopic echo\n\n\nTesting via velocityPublisher Node\n\n\n\n\nmkdocs new [dir-name]\n - Create a new project.\n\n\nmkdocs serve\n - Start the live-reloading docs server.\n\n\nmkdocs build\n - Build the documentation site.\n\n\nmkdocs help\n - Print this help message.\n\n\n\n\nProject layout\n\n\n1\n2\n3\ncatkin/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.", 
+            "title": "Getting Started"
+        }, 
+        {
+            "location": "/gettingStarted/#getting-started", 
+            "text": "Below are instructions and suggestions for leveraging the OmniRobot ROS package.  For any issues, questions, suggestions, or failures, please contact us via the project slack channel.", 
+            "title": "Getting Started"
+        }, 
+        {
+            "location": "/gettingStarted/#prerequisites", 
+            "text": "", 
+            "title": "Prerequisites"
+        }, 
+        {
+            "location": "/gettingStarted/#software", 
+            "text": "Robotic Operating System (ROS)  - Basic understanding of ROS is necessary to work with this package.  Threads/processes  - Basic knowledge of tasks, threads, and processes is essential,\nbut not neccesary.  Ubuntu OS : ROS and Arduino can be utilized on Windows/Mac, but a Linux distro is preferred. The following instructions will assume you have Ubuntu 16.04 on your desktop/laptop and Ubuntu Mate on your Pi.", 
+            "title": "Software"
+        }, 
+        {
+            "location": "/gettingStarted/#hardware", 
+            "text": "The following materials will be necessary in assembling the OmniRobot:   Jumper cables  Power supply for the Arduino  Power Supply for the Pi  Jumper cables  Wifi Router  Computer with SSH access", 
+            "title": "Hardware"
+        }, 
+        {
+            "location": "/gettingStarted/#installing", 
+            "text": "", 
+            "title": "Installing"
+        }, 
+        {
+            "location": "/gettingStarted/#installing-omnibot-pkg-on-pi", 
+            "text": "mkdocs new [dir-name]  - Create a new project.", 
+            "title": "Installing Omnibot pkg on Pi"
+        }, 
+        {
+            "location": "/gettingStarted/#deploying-rosserial-arduino-script", 
+            "text": "mkdocs new [dir-name]  - Create a new project.", 
+            "title": "Deploying ROSserial (Arduino) script"
+        }, 
+        {
+            "location": "/gettingStarted/#running-the-project", 
+            "text": "", 
+            "title": "Running the Project"
+        }, 
+        {
+            "location": "/gettingStarted/#running-via-roslaunch", 
+            "text": "mkdocs new [dir-name]  - Create a new project.", 
+            "title": "Running via ROSlaunch"
+        }, 
+        {
+            "location": "/gettingStarted/#running-manually", 
+            "text": "mkdocs new [dir-name]  - Create a new project.", 
+            "title": "Running Manually"
+        }, 
+        {
+            "location": "/gettingStarted/#confirm-successful-launch", 
+            "text": "", 
+            "title": "Confirm Successful Launch"
+        }, 
+        {
+            "location": "/gettingStarted/#confirm-via-rqt", 
+            "text": "", 
+            "title": "Confirm via RQT"
+        }, 
+        {
+            "location": "/gettingStarted/#confirm-via-rostopic-echo", 
+            "text": "", 
+            "title": "Confirm via ROStopic echo"
+        }, 
+        {
+            "location": "/gettingStarted/#testing-via-velocitypublisher-node", 
+            "text": "mkdocs new [dir-name]  - Create a new project.  mkdocs serve  - Start the live-reloading docs server.  mkdocs build  - Build the documentation site.  mkdocs help  - Print this help message.", 
+            "title": "Testing via velocityPublisher Node"
+        }, 
+        {
+            "location": "/gettingStarted/#project-layout", 
+            "text": "1\n2\n3 catkin/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.", 
+            "title": "Project layout"
+        }, 
+        {
+            "location": "/components/", 
+            "text": "Components\n\n\nRaspberry Pi 3B\n\n\n\n\n\n\nWith its high memory and sampling frequency, this was the chosen microcontroller for sensor data collection and internetwork communication. The ultrasound sensor and accelerometer, and other sensors in the future, are attached to the GPIO pins onboard.\n\n\n\n\nArduino 101\n\n\n\n\n\n\nThe Arduino 101 is the chosen microcontroller for motor control and features an onboard accelerometer and gyroscope.\n\n\n\n\nAdafruit Motor Shield\n\n\n\n\n\n\nAll 3 stepper motors are connected to the Arduino through motor shields.\n\n\n\n\nHRLZ-MaxSonar-EZ\n\n\n\n\n\n\nThe HRLV-MaxSonar-EZ acts as\nthe distance sensor, which also acts\nas the obstacle avoidance sensor.\nWith a resolution of 1 mm and up to\n5 meter max range, it has the\nprecision and capabilities to find and\navoid obstacles as it is moving.\n\n\n\n\nNEMA-17 Stepper Motor\n\n\n\n\n\n\nThe 12V, 350 mA NEMA-17 Stepper Motors drive the omnidirectional wheels. These motors have two coils, both of which can be activated for maximum torque.\n\n\n\n\nOmnidirectional Wheel\n\n\n\n\n\n\nThe chosen 10.2 cm omnidirectional\nwheels are placed in 120\u00b0 angles from one\nanother. By placing the wheels at these\nangles, combined with each wheel\u2019s\nincorporated rollers along the edge of the\nwheels, the robot can move in all directions\nand not have impeding wheels affecting\nmotion.", 
+            "title": "Components"
+        }, 
+        {
+            "location": "/components/#components", 
+            "text": "", 
+            "title": "Components"
+        }, 
+        {
+            "location": "/components/#raspberry-pi-3b", 
+            "text": "With its high memory and sampling frequency, this was the chosen microcontroller for sensor data collection and internetwork communication. The ultrasound sensor and accelerometer, and other sensors in the future, are attached to the GPIO pins onboard.", 
+            "title": "Raspberry Pi 3B"
+        }, 
+        {
+            "location": "/components/#arduino-101", 
+            "text": "The Arduino 101 is the chosen microcontroller for motor control and features an onboard accelerometer and gyroscope.", 
+            "title": "Arduino 101"
+        }, 
+        {
+            "location": "/components/#adafruit-motor-shield", 
+            "text": "All 3 stepper motors are connected to the Arduino through motor shields.", 
+            "title": "Adafruit Motor Shield"
+        }, 
+        {
+            "location": "/components/#hrlz-maxsonar-ez", 
+            "text": "The HRLV-MaxSonar-EZ acts as\nthe distance sensor, which also acts\nas the obstacle avoidance sensor.\nWith a resolution of 1 mm and up to\n5 meter max range, it has the\nprecision and capabilities to find and\navoid obstacles as it is moving.", 
+            "title": "HRLZ-MaxSonar-EZ"
+        }, 
+        {
+            "location": "/components/#nema-17-stepper-motor", 
+            "text": "The 12V, 350 mA NEMA-17 Stepper Motors drive the omnidirectional wheels. These motors have two coils, both of which can be activated for maximum torque.", 
+            "title": "NEMA-17 Stepper Motor"
+        }, 
+        {
+            "location": "/components/#omnidirectional-wheel", 
+            "text": "The chosen 10.2 cm omnidirectional\nwheels are placed in 120\u00b0 angles from one\nanother. By placing the wheels at these\nangles, combined with each wheel\u2019s\nincorporated rollers along the edge of the\nwheels, the robot can move in all directions\nand not have impeding wheels affecting\nmotion.", 
+            "title": "Omnidirectional Wheel"
+        }, 
+        {
+            "location": "/codeBase/", 
+            "text": "Code Base\n\n\nUltrasound Node\n\n\n 1\n 2\n 3\n 4\n 5\n 6\n 7\n 8\n 9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\n32\n33\n34\n35\n36\n37\n38\n39\n40\n41\n42\n43\n44\n45\n46\n47\n48\n49\n50\n51\n52\n53\n54\n55\n56\n57\n58\n  \n#!/usr/bin/python\n\n  \n# Publishes an integer value representing distance to target in millimeters\n\n\n  \nfrom\n \ntime\n \nimport\n \ntime\n\n  \nfrom\n \nserial\n \nimport\n \nSerial\n\n  \nimport\n \nrospy\n\n  \nfrom\n \nstd_msgs.msg\n \nimport\n \nInt8\n\n\n  \nserialDevice\n \n=\n \n/dev/ttyAMA0\n \n# default for RaspberryPi\n\n  \nmaxwait\n \n=\n \n5\n \n# seconds to try for a good reading before quitting\n\n\n\n  \ndef\n \nget_measurement\n(\nportName\n):\n\n      \nser\n \n=\n \nSerial\n(\nportName\n,\n \n9600\n,\n \n8\n,\n \nN\n,\n \n1\n,\n \ntimeout\n=\n1\n)\n\n      \ntimeStart\n \n=\n \ntime\n()\n\n      \nvalueCount\n \n=\n \n0\n\n\n      \nwhile\n \ntime\n()\n \n \ntimeStart\n \n+\n \nmaxwait\n:\n\n          \nif\n \nser\n.\ninWaiting\n():\n\n              \nbytesToRead\n \n=\n \nser\n.\ninWaiting\n()\n\n              \nvalueCount\n \n+=\n \n1\n\n              \nif\n \nvalueCount\n \n \n2\n:\n \n# 1st reading may be partial number; throw it out\n\n                  \ncontinue\n\n              \ntestData\n \n=\n \nser\n.\nread\n(\nbytesToRead\n)\n\n              \nif\n \nnot\n \ntestData\n.\nstartswith\n(\nb\nR\n):\n\n                  \n# data received did not start with R\n\n                  \ncontinue\n\n              \ntry\n:\n\n                  \nsensorData\n \n=\n \ntestData\n.\ndecode\n(\nutf-8\n)\n.\nlstrip\n(\nR\n)\n\n              \nexcept\n \nUnicodeDecodeError\n:\n\n                  \n# data received could not be decoded properly\n\n                  \ncontinue\n\n              \ntry\n:\n\n                  \nmm\n \n=\n \nint\n(\nsensorData\n)\n\n              \nexcept\n \nValueError\n:\n\n                  \n# value is not a number\n\n                  \ncontinue\n\n              \nser\n.\nclose\n()\n\n              \nreturn\n(\nmm\n)\n\n\n      \nser\n.\nclose\n()\n\n      \nraise\n \nRuntimeError\n(\nExpected serial data not received\n)\n\n\n  \ndef\n \npublish_measurement\n(\nportName\n):\n\n      \npub\n \n=\n \nrospy\n.\nPublisher\n(\nultrasound_distance\n,\n \nInt8\n,\n \nqueue_size\n=\n10\n)\n\n      \nrospy\n.\ninit_node\n(\nultrasoundPublisher_node\n)\n\n      \nrate\n \n=\n \nrospy\n.\nRate\n(\n10\n)\n \n# 10hz\n\n\n      \nwhile\n \nnot\n \nrospy\n.\nis_shutdown\n():\n\n          \nmeasurement\n \n=\n \nget_measurement\n(\nportName\n)\n\n\n          \nrospy\n.\nloginfo\n(\nmeasurement\n)\n\n          \npub\n.\npublish\n(\nmeasurement\n)\n\n          \nrate\n.\nsleep\n()\n\n\n  \nif\n \n__name__\n \n==\n \n__main__\n:\n\n      \npublish_measurement\n(\nserialDevice\n)\n\n      \n# print(\ndistance =\n,measurement)\n\n\n\n\n\n\n\nVelocity Publisher Node\n\n\n 1\n 2\n 3\n 4\n 5\n 6\n 7\n 8\n 9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n  \n#!/usr/bin/env python\n\n\n  \nimport\n \nrospy\n\n  \nfrom\n \nstd_msgs.msg\n \nimport\n \nInt64\n\n  \nfrom\n \ngeometry_msgs.msg\n \nimport\n \nPoint\n\n\n\n  \ndef\n \nVelocityPublisher_talker\n():\n\n      \npub\n \n=\n \nrospy\n.\nPublisher\n(\nsetStepMotorVelocity_topic\n,\n \nPoint\n,\n \nqueue_size\n=\n10\n)\n\n      \n# rospy.init_node(\nsetpoint_node\n, anonymous=True)\n\n      \nrospy\n.\ninit_node\n(\nvelocityPublisher_node\n)\n\n      \nrate\n \n=\n \nrospy\n.\nRate\n(\n1\n)\n \n# 10hz\n\n      \nvelocity\n=\n100.00\n\n      \nwhile\n \nnot\n \nrospy\n.\nis_shutdown\n():\n\n          \nvelocity\n \n-=\n \n1.0\n\n          \nrospy\n.\nloginfo\n([\nvelocity\n,\nvelocity\n,\nvelocity\n])\n\n          \npub\n.\npublish\n(\nvelocity\n,\nvelocity\n,\nvelocity\n)\n\n          \nrate\n.\nsleep\n()\n\n\n  \nif\n \n__name__\n \n==\n \n__main__\n:\n\n      \ntry\n:\n\n          \nVelocityPublisher_talker\n()\n\n      \nexcept\n \nrospy\n.\nROSInterruptException\n:\n\n          \npass\n\n\n\n\n\n\n\nROSserial Node (Arduino Script)\n\n\n  1\n  2\n  3\n  4\n  5\n  6\n  7\n  8\n  9\n 10\n 11\n 12\n 13\n 14\n 15\n 16\n 17\n 18\n 19\n 20\n 21\n 22\n 23\n 24\n 25\n 26\n 27\n 28\n 29\n 30\n 31\n 32\n 33\n 34\n 35\n 36\n 37\n 38\n 39\n 40\n 41\n 42\n 43\n 44\n 45\n 46\n 47\n 48\n 49\n 50\n 51\n 52\n 53\n 54\n 55\n 56\n 57\n 58\n 59\n 60\n 61\n 62\n 63\n 64\n 65\n 66\n 67\n 68\n 69\n 70\n 71\n 72\n 73\n 74\n 75\n 76\n 77\n 78\n 79\n 80\n 81\n 82\n 83\n 84\n 85\n 86\n 87\n 88\n 89\n 90\n 91\n 92\n 93\n 94\n 95\n 96\n 97\n 98\n 99\n100\n101\n102\n103\n104\n105\n106\n107\n108\n109\n110\n111\n112\n113\n114\n115\n116\n117\n118\n119\n120\n121\n122\n123\n124\n125\n126\n127\n128\n129\n130\n131\n132\n133\n134\n135\n136\n137\n138\n139\n140\n141\n142\n143\n144\n145\n146\n147\n148\n149\n150\n151\n152\n153\n154\n155\n156\n157\n158\n159\n160\n161\n162\n163\n164\n165\n166\n167\n168\n169\n170\n171\n172\n173\n174\n175\n176\n177\n178\n179\n180\n181\n182\n183\n184\n185\n186\n187\n188\n189\n190\n191\n192\n193\n194\n195\n196\n197\n198\n199\n200\n201\n202\n203\n204\n205\n206\n207\n208\n209\n210\n211\n212\n213\n214\n215\n216\n217\n218\n219\n220\n221\n222\n223\n  \n#include\n \nWire.h\n\n  \n#include\n \nAdafruit_MotorShield.h\n\n  \n#include\n \nros.h\n\n  \n#include\n \nstd_msgs/Int64.h\n\n  \n#include\n \nstd_msgs/Float32MultiArray.h\n\n  \n#include\n \ngeometry_msgs/Point.h\n\n  \n// ==================================================\n\n  \n#include\n \nCurieIMU.h\n\n  \n#include\n \nMadgwickAHRS.h\n\n\n  \n#include\n \nstd_msgs/String.h\n\n  \n#include\n \ngeometry_msgs/Vector3.h\n\n\n  \nros\n::\nNodeHandle\n \nnh\n;\n \n// Instantiate ros handler object\n\n\n\n  \n// std_msgs::String str_msg;\n\n  \n// ros::Publisher chatter(\nchatter\n, \nstr_msg);\n\n  \n//\n\n  \n// char hello[13] = \nhello world!\n;\n\n\n\n  \n// Instantiate motorshield objects\n\n  \nAdafruit_MotorShield\n \nAFMStop\n(\n0x61\n);\n\n  \nAdafruit_MotorShield\n \nAFMSbot\n(\n0x60\n);\n\n\n  \n// Get motor handler objects from motorshield objects\n\n  \nAdafruit_StepperMotor\n \n*\nstepMotor_1\n \n=\n \nAFMStop\n.\ngetStepper\n(\n200\n,\n \n2\n);\n\n  \nAdafruit_StepperMotor\n \n*\nstepMotor_2\n \n=\n \nAFMSbot\n.\ngetStepper\n(\n200\n,\n \n1\n);\n\n  \nAdafruit_StepperMotor\n \n*\nstepMotor_3\n \n=\n \nAFMSbot\n.\ngetStepper\n(\n200\n,\n \n2\n);\n\n\n  \n// initialize motors at angular_vel=0; available globally\n\n  \nfloat\n \nstepMotor1_vel\n=\n \n0\n;\n\n  \nfloat\n \nstepMotor2_vel\n=\n \n0\n;\n\n  \nfloat\n \nstepMotor3_vel\n=\n \n0\n;\n\n\n  \n// SET UP ONBOARD SENSORS [START] --------------------\n\n  \n// ---------------------------------------------------\n\n  \n// preallocate Vector3 variables to hold orientation/acceleation\n\n  \ngeometry_msgs\n::\nVector3\n \norientation\n;\n\n  \ngeometry_msgs\n::\nVector3\n \nlinearAccel\n;\n\n  \ngeometry_msgs\n::\nVector3\n \nangularAccel\n;\n\n  \n// std_msgs::Float32MultiArray currentMotorVelocities;\n\n\n\n  \n// // callback function for subscriber below. Updates velocities from FIFO queue\n\n  \nvoid\n \nupdateMotorVelocities\n(\n \nconst\n \ngeometry_msgs\n::\nPoint\n \nvelocity_msg\n)\n\n  \n{\n\n    \n// digitalWrite(13, HIGH-digitalRead(13));   // blink the led\n\n\n    \nstepMotor1_vel\n \n=\n \nvelocity_msg\n.\nx\n;\n\n    \nstepMotor2_vel\n \n=\n \nvelocity_msg\n.\ny\n;\n\n    \nstepMotor3_vel\n \n=\n \nvelocity_msg\n.\nz\n;\n\n\n    \nstepMotor_1\n-\nsetSpeed\n(\nstepMotor1_vel\n);\n\n    \nstepMotor_2\n-\nsetSpeed\n(\nstepMotor2_vel\n);\n\n    \nstepMotor_3\n-\nsetSpeed\n(\nstepMotor3_vel\n);\n\n  \n}\n\n\n  \nvoid\n \nsetMotor1Velocity\n(\nfloat\n \nmotorVel\n)\n\n  \n{\n\n    \nif\n \n(\n \nabs\n(\nmotorVel\n)\n \n \n0.01\n \n)\n \n{\n\n      \nif\n(\nmotorVel\n \n \n0\n)\n \n{\n\n          \nstepMotor_1\n-\nstep\n(\nBACKWARD\n,\n \nDOUBLE\n);\n\n      \n}\n\n      \nstepMotor_1\n-\nstep\n(\nFORWARD\n,\n \nDOUBLE\n);\n\n    \n}\n\n  \n}\n\n  \nvoid\n \nsetMotor2Velocity\n(\nfloat\n \nmotorVel\n)\n\n  \n{\n\n    \nif\n \n(\n \nabs\n(\nmotorVel\n)\n \n \n0.01\n \n)\n \n{\n\n      \nif\n(\nmotorVel\n \n \n0\n)\n \n{\n\n          \nstepMotor_2\n-\nstep\n(\nBACKWARD\n,\n \nDOUBLE\n);\n\n      \n}\n\n      \nstepMotor_2\n-\nstep\n(\nFORWARD\n,\n \nDOUBLE\n);\n\n    \n}\n\n  \n}\n\n  \nvoid\n \nsetMotor3Velocity\n(\nfloat\n \nmotorVel\n)\n\n  \n{\n\n    \nif\n \n(\n \nabs\n(\nmotorVel\n)\n \n \n0.01\n \n)\n \n{\n\n      \nif\n(\nmotorVel\n \n \n0\n)\n \n{\n\n          \nstepMotor_3\n-\nstep\n(\nBACKWARD\n,\n \nDOUBLE\n);\n\n      \n}\n\n      \nstepMotor_3\n-\nstep\n(\nFORWARD\n,\n \nDOUBLE\n);\n\n    \n}\n\n  \n}\n\n\n  \n// Set up motorVelocities subscriber\n\n  \nros\n::\nSubscriber\ngeometry_msgs\n::\nPoint\n \nmotorVelocities\n(\nsetStepMotorVelocity_topic\n,\n \nupdateMotorVelocities\n \n);\n\n\n  \n// Set up acceleation and orienation publishers\n\n  \nros\n::\nPublisher\n \nlinearAccel_topic\n(\nlinearAccel_topic\n,\n \nlinearAccel\n);\n\n  \nros\n::\nPublisher\n \nangularAccel_topic\n(\nangularAccel_topic\n,\n \nangularAccel\n);\n\n  \nros\n::\nPublisher\n \norientation_topic\n(\norientation_topic\n,\n \norientation\n);\n\n  \n// ros::Publisher currentMotorVelocities_topic(\ncurrentMotorVelocities_topic\n, \ncurrentMotorVelocities);\n\n\n  \n//\n\n  \n// instantiate Madgwick filter object\n\n  \nMadgwick\n \nfilter\n;\n\n\n  \n// initialize sensor data variables\n\n  \nunsigned\n \nlong\n \nmicrosPerReading\n,\n \nmicrosPrevious\n;\n\n  \nfloat\n \naccelScale\n,\n \ngyroScale\n;\n\n\n  \nint\n \naix\n,\n \naiy\n,\n \naiz\n;\n\n  \nint\n \ngix\n,\n \ngiy\n,\n \ngiz\n;\n\n  \nfloat\n \nax\n,\n \nay\n,\n \naz\n;\n\n  \nfloat\n \ngx\n,\n \ngy\n,\n \ngz\n;\n\n  \nfloat\n \nroll\n,\n \npitch\n,\n \nheading\n;\n\n  \nunsigned\n \nlong\n \nmicrosNow\n;\n\n\n  \n// onboard-sensor helper functions\n\n  \nfloat\n \nconvertRawAcceleration\n(\nint\n \naRaw\n)\n \n{\n\n    \n// since we are using 2G range\n\n    \n// -2g maps to a raw value of -32768\n\n    \n// +2g maps to a raw value of 32767\n\n\n    \nfloat\n \na\n \n=\n \n(\naRaw\n \n*\n \n2.0\n)\n \n/\n \n32768.0\n;\n\n    \nreturn\n \na\n;\n\n  \n}\n\n\n  \nfloat\n \nconvertRawGyro\n(\nint\n \ngRaw\n)\n \n{\n\n    \n// since we are using 250 degrees/seconds range\n\n    \n// -250 maps to a raw value of -32768\n\n    \n// +250 maps to a raw value of 32767\n\n\n    \nfloat\n \ng\n \n=\n \n(\ngRaw\n \n*\n \n250.0\n)\n \n/\n \n32768.0\n;\n\n    \nreturn\n \ng\n;\n\n  \n}\n\n\n  \n// ---------------------------------------------------\n\n  \n// SET UP ONBOARD SENSORS [END] -----------------------\n\n\n\n  \nvoid\n \nsetup\n()\n\n  \n{\n\n    \nSerial\n.\nbegin\n(\n115200\n);\n \n// set baud rate\n\n    \nnh\n.\ninitNode\n();\n\n    \n// nh.advertise(chatter);\n\n\n    \n// // notify master of our new publishers and subscribers\n\n    \nnh\n.\nsubscribe\n(\nmotorVelocities\n);\n\n    \nnh\n.\nadvertise\n(\norientation_topic\n);\n\n    \nnh\n.\nadvertise\n(\nlinearAccel_topic\n);\n\n    \nnh\n.\nadvertise\n(\nangularAccel_topic\n);\n\n    \n//\n\n    \n// nh.advertise(currentMotorVelocities_topic);\n\n    \n// nh.advertise(motorAngularDisplacements_topic);\n\n    \n//\n\n    \n// start the IMU and filter\n\n    \nCurieIMU\n.\nbegin\n();\n\n    \nCurieIMU\n.\nsetGyroRate\n(\n25\n);\n\n    \nCurieIMU\n.\nsetAccelerometerRate\n(\n25\n);\n\n    \nfilter\n.\nbegin\n(\n25\n);\n\n\n    \n// Set the accelerometer range to 2G\n\n    \nCurieIMU\n.\nsetAccelerometerRange\n(\n2\n);\n\n    \n// Set the gyroscope range to 250 degrees/second\n\n    \nCurieIMU\n.\nsetGyroRange\n(\n250\n);\n\n\n    \n// initialize variables to pace updates to correct rate\n\n    \nmicrosPerReading\n \n=\n \n1000000\n \n/\n \n25\n;\n\n    \nmicrosPrevious\n \n=\n \nmicros\n();\n\n\n    \nAFMSbot\n.\nbegin\n();\n \n// Start the bottom shield\n\n    \nAFMStop\n.\nbegin\n();\n \n// Start the top shield\n\n  \n}\n\n\n  \nvoid\n \nloop\n()\n\n  \n{\n\n    \n// str_msg.data = hello;\n\n    \n// chatter.publish( \nstr_msg );\n\n    \nnh\n.\nspinOnce\n();\n\n    \ndelay\n(\n1000\n);\n\n\n    \nsetMotor1Velocity\n(\nstepMotor1_vel\n);\n\n    \nsetMotor3Velocity\n(\nstepMotor2_vel\n);\n\n    \nsetMotor2Velocity\n(\nstepMotor3_vel\n);\n\n    \n// check if it\ns time to read data and update the filter\n\n    \nmicrosNow\n \n=\n \nmicros\n();\n\n    \nif\n \n(\nmicrosNow\n \n-\n \nmicrosPrevious\n \n=\n \nmicrosPerReading\n)\n \n{\n\n\n      \n// read raw data from CurieIMU\n\n      \nCurieIMU\n.\nreadMotionSensor\n(\naix\n,\n \naiy\n,\n \naiz\n,\n \ngix\n,\n \ngiy\n,\n \ngiz\n);\n\n\n      \n// convert from raw data to gravity and degrees/second units\n\n      \nax\n \n=\n \nconvertRawAcceleration\n(\naix\n);\n\n      \nay\n \n=\n \nconvertRawAcceleration\n(\naiy\n);\n\n      \naz\n \n=\n \nconvertRawAcceleration\n(\naiz\n);\n\n      \ngx\n \n=\n \nconvertRawGyro\n(\ngix\n);\n\n      \ngy\n \n=\n \nconvertRawGyro\n(\ngiy\n);\n\n      \ngz\n \n=\n \nconvertRawGyro\n(\ngiz\n);\n\n\n      \n// update the filter, which computes orientation\n\n      \nfilter\n.\nupdateIMU\n(\ngx\n,\n \ngy\n,\n \ngz\n,\n \nax\n,\n \nay\n,\n \naz\n);\n\n\n      \nroll\n \n=\n \nfilter\n.\ngetRoll\n();\n\n      \npitch\n \n=\n \nfilter\n.\ngetPitch\n();\n\n      \nheading\n \n=\n \nfilter\n.\ngetYaw\n();\n\n\n      \nlinearAccel\n.\nx\n \n=\n \nax\n;\n\n      \nlinearAccel\n.\ny\n \n=\n \nay\n;\n\n      \nlinearAccel\n.\nz\n \n=\n \naz\n;\n\n      \nangularAccel\n.\nx\n \n=\n \ngx\n;\n\n      \nangularAccel\n.\ny\n \n=\n \ngy\n;\n\n      \nangularAccel\n.\nz\n \n=\n \ngz\n;\n\n\n      \norientation\n.\nx\n \n=\n \nroll\n;\n\n      \norientation\n.\ny\n \n=\n \npitch\n;\n\n      \norientation\n.\nz\n \n=\n \nheading\n;\n\n\n      \nlinearAccel_topic\n.\npublish\n(\n \nlinearAccel\n \n);\n\n      \nangularAccel_topic\n.\npublish\n(\n \nangularAccel\n \n);\n\n      \norientation_topic\n.\npublish\n(\n \norientation\n \n);\n\n\n      \n// increment previous time, so we keep proper pace\n\n      \nmicrosPrevious\n \n=\n \nmicrosPrevious\n \n+\n \nmicrosPerReading\n;\n\n    \n}\n\n    \n// currentMotorVelocities.data[0] = stepMotor1_vel;\n\n    \n// currentMotorVelocities.data[1] = stepMotor2_vel;\n\n    \n// currentMotorVelocities.data[2] = stepMotor3_vel;\n\n    \n// currentMotorVelocities_topic.publish(\ncurrentMotorVelocities);\n\n  \n}", 
+            "title": "Code Base"
+        }, 
+        {
+            "location": "/codeBase/#code-base", 
+            "text": "", 
+            "title": "Code Base"
+        }, 
+        {
+            "location": "/codeBase/#ultrasound-node", 
+            "text": "1\n 2\n 3\n 4\n 5\n 6\n 7\n 8\n 9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\n32\n33\n34\n35\n36\n37\n38\n39\n40\n41\n42\n43\n44\n45\n46\n47\n48\n49\n50\n51\n52\n53\n54\n55\n56\n57\n58    #!/usr/bin/python \n   # Publishes an integer value representing distance to target in millimeters \n\n   from   time   import   time \n   from   serial   import   Serial \n   import   rospy \n   from   std_msgs.msg   import   Int8 \n\n   serialDevice   =   /dev/ttyAMA0   # default for RaspberryPi \n   maxwait   =   5   # seconds to try for a good reading before quitting \n\n\n   def   get_measurement ( portName ): \n       ser   =   Serial ( portName ,   9600 ,   8 ,   N ,   1 ,   timeout = 1 ) \n       timeStart   =   time () \n       valueCount   =   0 \n\n       while   time ()     timeStart   +   maxwait : \n           if   ser . inWaiting (): \n               bytesToRead   =   ser . inWaiting () \n               valueCount   +=   1 \n               if   valueCount     2 :   # 1st reading may be partial number; throw it out \n                   continue \n               testData   =   ser . read ( bytesToRead ) \n               if   not   testData . startswith ( b R ): \n                   # data received did not start with R \n                   continue \n               try : \n                   sensorData   =   testData . decode ( utf-8 ) . lstrip ( R ) \n               except   UnicodeDecodeError : \n                   # data received could not be decoded properly \n                   continue \n               try : \n                   mm   =   int ( sensorData ) \n               except   ValueError : \n                   # value is not a number \n                   continue \n               ser . close () \n               return ( mm ) \n\n       ser . close () \n       raise   RuntimeError ( Expected serial data not received ) \n\n   def   publish_measurement ( portName ): \n       pub   =   rospy . Publisher ( ultrasound_distance ,   Int8 ,   queue_size = 10 ) \n       rospy . init_node ( ultrasoundPublisher_node ) \n       rate   =   rospy . Rate ( 10 )   # 10hz \n\n       while   not   rospy . is_shutdown (): \n           measurement   =   get_measurement ( portName ) \n\n           rospy . loginfo ( measurement ) \n           pub . publish ( measurement ) \n           rate . sleep () \n\n   if   __name__   ==   __main__ : \n       publish_measurement ( serialDevice ) \n       # print( distance = ,measurement)", 
+            "title": "Ultrasound Node"
+        }, 
+        {
+            "location": "/codeBase/#velocity-publisher-node", 
+            "text": "1\n 2\n 3\n 4\n 5\n 6\n 7\n 8\n 9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24    #!/usr/bin/env python \n\n   import   rospy \n   from   std_msgs.msg   import   Int64 \n   from   geometry_msgs.msg   import   Point \n\n\n   def   VelocityPublisher_talker (): \n       pub   =   rospy . Publisher ( setStepMotorVelocity_topic ,   Point ,   queue_size = 10 ) \n       # rospy.init_node( setpoint_node , anonymous=True) \n       rospy . init_node ( velocityPublisher_node ) \n       rate   =   rospy . Rate ( 1 )   # 10hz \n       velocity = 100.00 \n       while   not   rospy . is_shutdown (): \n           velocity   -=   1.0 \n           rospy . loginfo ([ velocity , velocity , velocity ]) \n           pub . publish ( velocity , velocity , velocity ) \n           rate . sleep () \n\n   if   __name__   ==   __main__ : \n       try : \n           VelocityPublisher_talker () \n       except   rospy . ROSInterruptException : \n           pass", 
+            "title": "Velocity Publisher Node"
+        }, 
+        {
+            "location": "/codeBase/#rosserial-node-arduino-script", 
+            "text": "1\n  2\n  3\n  4\n  5\n  6\n  7\n  8\n  9\n 10\n 11\n 12\n 13\n 14\n 15\n 16\n 17\n 18\n 19\n 20\n 21\n 22\n 23\n 24\n 25\n 26\n 27\n 28\n 29\n 30\n 31\n 32\n 33\n 34\n 35\n 36\n 37\n 38\n 39\n 40\n 41\n 42\n 43\n 44\n 45\n 46\n 47\n 48\n 49\n 50\n 51\n 52\n 53\n 54\n 55\n 56\n 57\n 58\n 59\n 60\n 61\n 62\n 63\n 64\n 65\n 66\n 67\n 68\n 69\n 70\n 71\n 72\n 73\n 74\n 75\n 76\n 77\n 78\n 79\n 80\n 81\n 82\n 83\n 84\n 85\n 86\n 87\n 88\n 89\n 90\n 91\n 92\n 93\n 94\n 95\n 96\n 97\n 98\n 99\n100\n101\n102\n103\n104\n105\n106\n107\n108\n109\n110\n111\n112\n113\n114\n115\n116\n117\n118\n119\n120\n121\n122\n123\n124\n125\n126\n127\n128\n129\n130\n131\n132\n133\n134\n135\n136\n137\n138\n139\n140\n141\n142\n143\n144\n145\n146\n147\n148\n149\n150\n151\n152\n153\n154\n155\n156\n157\n158\n159\n160\n161\n162\n163\n164\n165\n166\n167\n168\n169\n170\n171\n172\n173\n174\n175\n176\n177\n178\n179\n180\n181\n182\n183\n184\n185\n186\n187\n188\n189\n190\n191\n192\n193\n194\n195\n196\n197\n198\n199\n200\n201\n202\n203\n204\n205\n206\n207\n208\n209\n210\n211\n212\n213\n214\n215\n216\n217\n218\n219\n220\n221\n222\n223    #include   Wire.h \n   #include   Adafruit_MotorShield.h \n   #include   ros.h \n   #include   std_msgs/Int64.h \n   #include   std_msgs/Float32MultiArray.h \n   #include   geometry_msgs/Point.h \n   // ================================================== \n   #include   CurieIMU.h \n   #include   MadgwickAHRS.h \n\n   #include   std_msgs/String.h \n   #include   geometry_msgs/Vector3.h \n\n   ros :: NodeHandle   nh ;   // Instantiate ros handler object \n\n\n   // std_msgs::String str_msg; \n   // ros::Publisher chatter( chatter ,  str_msg); \n   // \n   // char hello[13] =  hello world! ; \n\n\n   // Instantiate motorshield objects \n   Adafruit_MotorShield   AFMStop ( 0x61 ); \n   Adafruit_MotorShield   AFMSbot ( 0x60 ); \n\n   // Get motor handler objects from motorshield objects \n   Adafruit_StepperMotor   * stepMotor_1   =   AFMStop . getStepper ( 200 ,   2 ); \n   Adafruit_StepperMotor   * stepMotor_2   =   AFMSbot . getStepper ( 200 ,   1 ); \n   Adafruit_StepperMotor   * stepMotor_3   =   AFMSbot . getStepper ( 200 ,   2 ); \n\n   // initialize motors at angular_vel=0; available globally \n   float   stepMotor1_vel =   0 ; \n   float   stepMotor2_vel =   0 ; \n   float   stepMotor3_vel =   0 ; \n\n   // SET UP ONBOARD SENSORS [START] -------------------- \n   // --------------------------------------------------- \n   // preallocate Vector3 variables to hold orientation/acceleation \n   geometry_msgs :: Vector3   orientation ; \n   geometry_msgs :: Vector3   linearAccel ; \n   geometry_msgs :: Vector3   angularAccel ; \n   // std_msgs::Float32MultiArray currentMotorVelocities; \n\n\n   // // callback function for subscriber below. Updates velocities from FIFO queue \n   void   updateMotorVelocities (   const   geometry_msgs :: Point   velocity_msg ) \n   { \n     // digitalWrite(13, HIGH-digitalRead(13));   // blink the led \n\n     stepMotor1_vel   =   velocity_msg . x ; \n     stepMotor2_vel   =   velocity_msg . y ; \n     stepMotor3_vel   =   velocity_msg . z ; \n\n     stepMotor_1 - setSpeed ( stepMotor1_vel ); \n     stepMotor_2 - setSpeed ( stepMotor2_vel ); \n     stepMotor_3 - setSpeed ( stepMotor3_vel ); \n   } \n\n   void   setMotor1Velocity ( float   motorVel ) \n   { \n     if   (   abs ( motorVel )     0.01   )   { \n       if ( motorVel     0 )   { \n           stepMotor_1 - step ( BACKWARD ,   DOUBLE ); \n       } \n       stepMotor_1 - step ( FORWARD ,   DOUBLE ); \n     } \n   } \n   void   setMotor2Velocity ( float   motorVel ) \n   { \n     if   (   abs ( motorVel )     0.01   )   { \n       if ( motorVel     0 )   { \n           stepMotor_2 - step ( BACKWARD ,   DOUBLE ); \n       } \n       stepMotor_2 - step ( FORWARD ,   DOUBLE ); \n     } \n   } \n   void   setMotor3Velocity ( float   motorVel ) \n   { \n     if   (   abs ( motorVel )     0.01   )   { \n       if ( motorVel     0 )   { \n           stepMotor_3 - step ( BACKWARD ,   DOUBLE ); \n       } \n       stepMotor_3 - step ( FORWARD ,   DOUBLE ); \n     } \n   } \n\n   // Set up motorVelocities subscriber \n   ros :: Subscriber geometry_msgs :: Point   motorVelocities ( setStepMotorVelocity_topic ,   updateMotorVelocities   ); \n\n   // Set up acceleation and orienation publishers \n   ros :: Publisher   linearAccel_topic ( linearAccel_topic ,   linearAccel ); \n   ros :: Publisher   angularAccel_topic ( angularAccel_topic ,   angularAccel ); \n   ros :: Publisher   orientation_topic ( orientation_topic ,   orientation ); \n   // ros::Publisher currentMotorVelocities_topic( currentMotorVelocities_topic ,  currentMotorVelocities); \n\n   // \n   // instantiate Madgwick filter object \n   Madgwick   filter ; \n\n   // initialize sensor data variables \n   unsigned   long   microsPerReading ,   microsPrevious ; \n   float   accelScale ,   gyroScale ; \n\n   int   aix ,   aiy ,   aiz ; \n   int   gix ,   giy ,   giz ; \n   float   ax ,   ay ,   az ; \n   float   gx ,   gy ,   gz ; \n   float   roll ,   pitch ,   heading ; \n   unsigned   long   microsNow ; \n\n   // onboard-sensor helper functions \n   float   convertRawAcceleration ( int   aRaw )   { \n     // since we are using 2G range \n     // -2g maps to a raw value of -32768 \n     // +2g maps to a raw value of 32767 \n\n     float   a   =   ( aRaw   *   2.0 )   /   32768.0 ; \n     return   a ; \n   } \n\n   float   convertRawGyro ( int   gRaw )   { \n     // since we are using 250 degrees/seconds range \n     // -250 maps to a raw value of -32768 \n     // +250 maps to a raw value of 32767 \n\n     float   g   =   ( gRaw   *   250.0 )   /   32768.0 ; \n     return   g ; \n   } \n\n   // --------------------------------------------------- \n   // SET UP ONBOARD SENSORS [END] ----------------------- \n\n\n   void   setup () \n   { \n     Serial . begin ( 115200 );   // set baud rate \n     nh . initNode (); \n     // nh.advertise(chatter); \n\n     // // notify master of our new publishers and subscribers \n     nh . subscribe ( motorVelocities ); \n     nh . advertise ( orientation_topic ); \n     nh . advertise ( linearAccel_topic ); \n     nh . advertise ( angularAccel_topic ); \n     // \n     // nh.advertise(currentMotorVelocities_topic); \n     // nh.advertise(motorAngularDisplacements_topic); \n     // \n     // start the IMU and filter \n     CurieIMU . begin (); \n     CurieIMU . setGyroRate ( 25 ); \n     CurieIMU . setAccelerometerRate ( 25 ); \n     filter . begin ( 25 ); \n\n     // Set the accelerometer range to 2G \n     CurieIMU . setAccelerometerRange ( 2 ); \n     // Set the gyroscope range to 250 degrees/second \n     CurieIMU . setGyroRange ( 250 ); \n\n     // initialize variables to pace updates to correct rate \n     microsPerReading   =   1000000   /   25 ; \n     microsPrevious   =   micros (); \n\n     AFMSbot . begin ();   // Start the bottom shield \n     AFMStop . begin ();   // Start the top shield \n   } \n\n   void   loop () \n   { \n     // str_msg.data = hello; \n     // chatter.publish(  str_msg ); \n     nh . spinOnce (); \n     delay ( 1000 ); \n\n     setMotor1Velocity ( stepMotor1_vel ); \n     setMotor3Velocity ( stepMotor2_vel ); \n     setMotor2Velocity ( stepMotor3_vel ); \n     // check if it s time to read data and update the filter \n     microsNow   =   micros (); \n     if   ( microsNow   -   microsPrevious   =   microsPerReading )   { \n\n       // read raw data from CurieIMU \n       CurieIMU . readMotionSensor ( aix ,   aiy ,   aiz ,   gix ,   giy ,   giz ); \n\n       // convert from raw data to gravity and degrees/second units \n       ax   =   convertRawAcceleration ( aix ); \n       ay   =   convertRawAcceleration ( aiy ); \n       az   =   convertRawAcceleration ( aiz ); \n       gx   =   convertRawGyro ( gix ); \n       gy   =   convertRawGyro ( giy ); \n       gz   =   convertRawGyro ( giz ); \n\n       // update the filter, which computes orientation \n       filter . updateIMU ( gx ,   gy ,   gz ,   ax ,   ay ,   az ); \n\n       roll   =   filter . getRoll (); \n       pitch   =   filter . getPitch (); \n       heading   =   filter . getYaw (); \n\n       linearAccel . x   =   ax ; \n       linearAccel . y   =   ay ; \n       linearAccel . z   =   az ; \n       angularAccel . x   =   gx ; \n       angularAccel . y   =   gy ; \n       angularAccel . z   =   gz ; \n\n       orientation . x   =   roll ; \n       orientation . y   =   pitch ; \n       orientation . z   =   heading ; \n\n       linearAccel_topic . publish (   linearAccel   ); \n       angularAccel_topic . publish (   angularAccel   ); \n       orientation_topic . publish (   orientation   ); \n\n       // increment previous time, so we keep proper pace \n       microsPrevious   =   microsPrevious   +   microsPerReading ; \n     } \n     // currentMotorVelocities.data[0] = stepMotor1_vel; \n     // currentMotorVelocities.data[1] = stepMotor2_vel; \n     // currentMotorVelocities.data[2] = stepMotor3_vel; \n     // currentMotorVelocities_topic.publish( currentMotorVelocities); \n   }", 
+            "title": "ROSserial Node (Arduino Script)"
+        }, 
+        {
+            "location": "/troubleshooting/", 
+            "text": "Troubleshooting\n\n\nFor full documentation visit \nmkdocs.org\n.\n\n\nCommands\n\n\n\n\nmkdocs new [dir-name]\n - Create a new project.\n\n\nmkdocs serve\n - Start the live-reloading docs server.\n\n\nmkdocs build\n - Build the documentation site.\n\n\nmkdocs help\n - Print this help message.\n\n\n\n\nProject layout\n\n\n1\n2\n3\n4\nmkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.", 
+            "title": "Troubleshooting"
+        }, 
+        {
+            "location": "/troubleshooting/#troubleshooting", 
+            "text": "For full documentation visit  mkdocs.org .", 
+            "title": "Troubleshooting"
+        }, 
+        {
+            "location": "/troubleshooting/#commands", 
+            "text": "mkdocs new [dir-name]  - Create a new project.  mkdocs serve  - Start the live-reloading docs server.  mkdocs build  - Build the documentation site.  mkdocs help  - Print this help message.", 
+            "title": "Commands"
+        }, 
+        {
+            "location": "/troubleshooting/#project-layout", 
+            "text": "1\n2\n3\n4 mkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.", 
+            "title": "Project layout"
+        }, 
+        {
+            "location": "/projectSlackChannel/", 
+            "text": "Project Slack Channel\n\n\nFor full documentation visit \nmkdocs.org\n.\n\n\nHelp / Issues\n\n\n\n\nmkdocs new [dir-name]\n - Create a new project.\n\n\nmkdocs serve\n - Start the live-reloading docs server.\n\n\nmkdocs build\n - Build the documentation site.\n\n\nmkdocs help\n - Print this help message.\n\n\n\n\nSuggestions / Requests\n\n\n1\n2\n3\n4\nmkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.", 
+            "title": "Project Slack Channel"
+        }, 
+        {
+            "location": "/projectSlackChannel/#project-slack-channel", 
+            "text": "For full documentation visit  mkdocs.org .", 
+            "title": "Project Slack Channel"
+        }, 
+        {
+            "location": "/projectSlackChannel/#help-issues", 
+            "text": "mkdocs new [dir-name]  - Create a new project.  mkdocs serve  - Start the live-reloading docs server.  mkdocs build  - Build the documentation site.  mkdocs help  - Print this help message.", 
+            "title": "Help / Issues"
+        }, 
+        {
+            "location": "/projectSlackChannel/#suggestions-requests", 
+            "text": "1\n2\n3\n4 mkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.", 
+            "title": "Suggestions / Requests"
+        }
+    ]
+}

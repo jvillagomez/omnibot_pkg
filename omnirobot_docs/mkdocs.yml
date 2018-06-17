@@ -1,7 +1,7 @@
 site_name: OmniRobot
 site_description: 'Documentation on design and deployment of OmniBot catkin package'
-site_author: 'Martin Donath'
-site_url: 'https://squidfunk.github.io/mkdocs-material/'
+# site_author: 'Martin Donath'
+# site_url: '127.0.0.1:8001/'
 
 
 # Repository
@@ -12,7 +12,8 @@ repo_url: 'https://github.com/jvillagomez/omnibot_pkg'
 copyright: 'Copyright &copy; 2018 PasqLab'
 
 pages:
-  - Overview: overview.md
+  # - Index: index.md
+  - Overview: index.md
   - System Architecture: systemArchitecture.md
   - Getting Started: gettingStarted.md
   - Components: components.md
@@ -31,3 +32,7 @@ theme:
     code: 'Roboto Mono'
   logo: 'images/OmniRobot_wheelLogo.png'
     # icon: 'cloud'
+
+markdown_extensions:
+  - codehilite:
+      linenums: true

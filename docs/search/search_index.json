@@ -16,26 +16,6 @@
             "title": "Robot Specifications:"
         }, 
         {
-            "location": "/systemArchitecture/", 
-            "text": "System Architecture\n\n\nHardware\n\n\n\n\n\n\nDummy\n\n\n\n\nROS", 
-            "title": "System Architecture"
-        }, 
-        {
-            "location": "/systemArchitecture/#system-architecture", 
-            "text": "", 
-            "title": "System Architecture"
-        }, 
-        {
-            "location": "/systemArchitecture/#hardware", 
-            "text": "Dummy", 
-            "title": "Hardware"
-        }, 
-        {
-            "location": "/systemArchitecture/#ros", 
-            "text": "", 
-            "title": "ROS"
-        }, 
-        {
             "location": "/gettingStarted/", 
             "text": "Getting Started\n\n\nBelow are instructions and suggestions for leveraging the OmniRobot ROS package.\n\n\nFor any issues, questions, suggestions, or failures, please contact us via the project slack channel.\n\n\nPrerequisites\n\n\nSoftware\n\n\n\n\nRobotic Operating System (ROS)\n - Basic understanding of ROS is necessary to work with this package.\n\n\nThreads/processes\n - Basic knowledge of tasks, threads, and processes is essential,\nbut not neccesary.\n\n\nUbuntu OS\n: ROS and Arduino can be utilized on Windows/Mac, but a Linux distro is preferred. The following instructions will assume you have Ubuntu 16.04 on your desktop/laptop and Ubuntu Mate on your Pi.\n\n\n\n\nHardware\n\n\nThe following materials will be necessary in assembling the OmniRobot:\n\n\n\n\nJumper cables\n\n\nPower supply for the Arduino\n\n\nPower Supply for the Pi\n\n\nJumper cables\n\n\nWifi Router\n\n\nComputer with SSH access\n\n\n\n\nInstalling\n\n\nInstalling Omnibot pkg on Pi\n\n\n\n\nmkdocs new [dir-name]\n - Create a new project.\n\n\n\n\nDeploying ROSserial (Arduino) script\n\n\n\n\nmkdocs new [dir-name]\n - Create a new project.\n\n\n\n\nRunning the Project\n\n\nRunning via ROSlaunch\n\n\n\n\nmkdocs new [dir-name]\n - Create a new project.\n\n\n\n\nRunning Manually\n\n\n\n\nmkdocs new [dir-name]\n - Create a new project.\n\n\n\n\nConfirm Successful Launch\n\n\nConfirm via RQT\n\n\nConfirm via ROStopic echo\n\n\nTesting via velocityPublisher Node\n\n\n\n\nmkdocs new [dir-name]\n - Create a new project.\n\n\nmkdocs serve\n - Start the live-reloading docs server.\n\n\nmkdocs build\n - Build the documentation site.\n\n\nmkdocs help\n - Print this help message.\n\n\n\n\nProject layout\n\n\n1\n2\n3\ncatkin/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.", 
             "title": "Getting Started"
@@ -116,6 +96,26 @@
             "title": "Project layout"
         }, 
         {
+            "location": "/systemArchitecture/", 
+            "text": "System Architecture\n\n\nHardware\n\n\n\n\n\n\nDummy\n\n\n\n\nROS", 
+            "title": "System Architecture"
+        }, 
+        {
+            "location": "/systemArchitecture/#system-architecture", 
+            "text": "", 
+            "title": "System Architecture"
+        }, 
+        {
+            "location": "/systemArchitecture/#hardware", 
+            "text": "Dummy", 
+            "title": "Hardware"
+        }, 
+        {
+            "location": "/systemArchitecture/#ros", 
+            "text": "", 
+            "title": "ROS"
+        }, 
+        {
             "location": "/components/", 
             "text": "Components\n\n\nRaspberry Pi 3B\n\n\n\n\n\n\nWith its high memory and sampling frequency, this was the chosen microcontroller for sensor data collection and internetwork communication. The ultrasound sensor and accelerometer, and other sensors in the future, are attached to the GPIO pins onboard.\n\n\n\n\nArduino 101\n\n\n\n\n\n\nThe Arduino 101 is the chosen microcontroller for motor control and features an onboard accelerometer and gyroscope.\n\n\n\n\nAdafruit Motor Shield\n\n\n\n\n\n\nAll 3 stepper motors are connected to the Arduino through motor shields.\n\n\n\n\nHRLZ-MaxSonar-EZ\n\n\n\n\n\n\nThe HRLV-MaxSonar-EZ acts as\nthe distance sensor, which also acts\nas the obstacle avoidance sensor.\nWith a resolution of 1 mm and up to\n5 meter max range, it has the\nprecision and capabilities to find and\navoid obstacles as it is moving.\n\n\n\n\nNEMA-17 Stepper Motor\n\n\n\n\n\n\nThe 12V, 350 mA NEMA-17 Stepper Motors drive the omnidirectional wheels. These motors have two coils, both of which can be activated for maximum torque.\n\n\n\n\nOmnidirectional Wheel\n\n\n\n\n\n\nThe chosen 10.2 cm omnidirectional\nwheels are placed in 120\u00b0 angles from one\nanother. By placing the wheels at these\nangles, combined with each wheel\u2019s\nincorporated rollers along the edge of the\nwheels, the robot can move in all directions\nand not have impeding wheels affecting\nmotion.", 
             "title": "Components"
@@ -179,6 +179,86 @@
             "location": "/codeBase/#rosserial-node-arduino-script", 
             "text": "1\n  2\n  3\n  4\n  5\n  6\n  7\n  8\n  9\n 10\n 11\n 12\n 13\n 14\n 15\n 16\n 17\n 18\n 19\n 20\n 21\n 22\n 23\n 24\n 25\n 26\n 27\n 28\n 29\n 30\n 31\n 32\n 33\n 34\n 35\n 36\n 37\n 38\n 39\n 40\n 41\n 42\n 43\n 44\n 45\n 46\n 47\n 48\n 49\n 50\n 51\n 52\n 53\n 54\n 55\n 56\n 57\n 58\n 59\n 60\n 61\n 62\n 63\n 64\n 65\n 66\n 67\n 68\n 69\n 70\n 71\n 72\n 73\n 74\n 75\n 76\n 77\n 78\n 79\n 80\n 81\n 82\n 83\n 84\n 85\n 86\n 87\n 88\n 89\n 90\n 91\n 92\n 93\n 94\n 95\n 96\n 97\n 98\n 99\n100\n101\n102\n103\n104\n105\n106\n107\n108\n109\n110\n111\n112\n113\n114\n115\n116\n117\n118\n119\n120\n121\n122\n123\n124\n125\n126\n127\n128\n129\n130\n131\n132\n133\n134\n135\n136\n137\n138\n139\n140\n141\n142\n143\n144\n145\n146\n147\n148\n149\n150\n151\n152\n153\n154\n155\n156\n157\n158\n159\n160\n161\n162\n163\n164\n165\n166\n167\n168\n169\n170\n171\n172\n173\n174\n175\n176\n177\n178\n179\n180\n181\n182\n183\n184\n185\n186\n187\n188\n189\n190\n191\n192\n193\n194\n195\n196\n197\n198\n199\n200\n201\n202\n203\n204\n205\n206\n207\n208\n209\n210\n211\n212\n213\n214\n215\n216\n217\n218\n219\n220\n221\n222\n223    #include   Wire.h \n   #include   Adafruit_MotorShield.h \n   #include   ros.h \n   #include   std_msgs/Int64.h \n   #include   std_msgs/Float32MultiArray.h \n   #include   geometry_msgs/Point.h \n   // ================================================== \n   #include   CurieIMU.h \n   #include   MadgwickAHRS.h \n\n   #include   std_msgs/String.h \n   #include   geometry_msgs/Vector3.h \n\n   ros :: NodeHandle   nh ;   // Instantiate ros handler object \n\n\n   // std_msgs::String str_msg; \n   // ros::Publisher chatter( chatter ,  str_msg); \n   // \n   // char hello[13] =  hello world! ; \n\n\n   // Instantiate motorshield objects \n   Adafruit_MotorShield   AFMStop ( 0x61 ); \n   Adafruit_MotorShield   AFMSbot ( 0x60 ); \n\n   // Get motor handler objects from motorshield objects \n   Adafruit_StepperMotor   * stepMotor_1   =   AFMStop . getStepper ( 200 ,   2 ); \n   Adafruit_StepperMotor   * stepMotor_2   =   AFMSbot . getStepper ( 200 ,   1 ); \n   Adafruit_StepperMotor   * stepMotor_3   =   AFMSbot . getStepper ( 200 ,   2 ); \n\n   // initialize motors at angular_vel=0; available globally \n   float   stepMotor1_vel =   0 ; \n   float   stepMotor2_vel =   0 ; \n   float   stepMotor3_vel =   0 ; \n\n   // SET UP ONBOARD SENSORS [START] -------------------- \n   // --------------------------------------------------- \n   // preallocate Vector3 variables to hold orientation/acceleation \n   geometry_msgs :: Vector3   orientation ; \n   geometry_msgs :: Vector3   linearAccel ; \n   geometry_msgs :: Vector3   angularAccel ; \n   // std_msgs::Float32MultiArray currentMotorVelocities; \n\n\n   // // callback function for subscriber below. Updates velocities from FIFO queue \n   void   updateMotorVelocities (   const   geometry_msgs :: Point   velocity_msg ) \n   { \n     // digitalWrite(13, HIGH-digitalRead(13));   // blink the led \n\n     stepMotor1_vel   =   velocity_msg . x ; \n     stepMotor2_vel   =   velocity_msg . y ; \n     stepMotor3_vel   =   velocity_msg . z ; \n\n     stepMotor_1 - setSpeed ( stepMotor1_vel ); \n     stepMotor_2 - setSpeed ( stepMotor2_vel ); \n     stepMotor_3 - setSpeed ( stepMotor3_vel ); \n   } \n\n   void   setMotor1Velocity ( float   motorVel ) \n   { \n     if   (   abs ( motorVel )     0.01   )   { \n       if ( motorVel     0 )   { \n           stepMotor_1 - step ( BACKWARD ,   DOUBLE ); \n       } \n       stepMotor_1 - step ( FORWARD ,   DOUBLE ); \n     } \n   } \n   void   setMotor2Velocity ( float   motorVel ) \n   { \n     if   (   abs ( motorVel )     0.01   )   { \n       if ( motorVel     0 )   { \n           stepMotor_2 - step ( BACKWARD ,   DOUBLE ); \n       } \n       stepMotor_2 - step ( FORWARD ,   DOUBLE ); \n     } \n   } \n   void   setMotor3Velocity ( float   motorVel ) \n   { \n     if   (   abs ( motorVel )     0.01   )   { \n       if ( motorVel     0 )   { \n           stepMotor_3 - step ( BACKWARD ,   DOUBLE ); \n       } \n       stepMotor_3 - step ( FORWARD ,   DOUBLE ); \n     } \n   } \n\n   // Set up motorVelocities subscriber \n   ros :: Subscriber geometry_msgs :: Point   motorVelocities ( setStepMotorVelocity_topic ,   updateMotorVelocities   ); \n\n   // Set up acceleation and orienation publishers \n   ros :: Publisher   linearAccel_topic ( linearAccel_topic ,   linearAccel ); \n   ros :: Publisher   angularAccel_topic ( angularAccel_topic ,   angularAccel ); \n   ros :: Publisher   orientation_topic ( orientation_topic ,   orientation ); \n   // ros::Publisher currentMotorVelocities_topic( currentMotorVelocities_topic ,  currentMotorVelocities); \n\n   // \n   // instantiate Madgwick filter object \n   Madgwick   filter ; \n\n   // initialize sensor data variables \n   unsigned   long   microsPerReading ,   microsPrevious ; \n   float   accelScale ,   gyroScale ; \n\n   int   aix ,   aiy ,   aiz ; \n   int   gix ,   giy ,   giz ; \n   float   ax ,   ay ,   az ; \n   float   gx ,   gy ,   gz ; \n   float   roll ,   pitch ,   heading ; \n   unsigned   long   microsNow ; \n\n   // onboard-sensor helper functions \n   float   convertRawAcceleration ( int   aRaw )   { \n     // since we are using 2G range \n     // -2g maps to a raw value of -32768 \n     // +2g maps to a raw value of 32767 \n\n     float   a   =   ( aRaw   *   2.0 )   /   32768.0 ; \n     return   a ; \n   } \n\n   float   convertRawGyro ( int   gRaw )   { \n     // since we are using 250 degrees/seconds range \n     // -250 maps to a raw value of -32768 \n     // +250 maps to a raw value of 32767 \n\n     float   g   =   ( gRaw   *   250.0 )   /   32768.0 ; \n     return   g ; \n   } \n\n   // --------------------------------------------------- \n   // SET UP ONBOARD SENSORS [END] ----------------------- \n\n\n   void   setup () \n   { \n     Serial . begin ( 115200 );   // set baud rate \n     nh . initNode (); \n     // nh.advertise(chatter); \n\n     // // notify master of our new publishers and subscribers \n     nh . subscribe ( motorVelocities ); \n     nh . advertise ( orientation_topic ); \n     nh . advertise ( linearAccel_topic ); \n     nh . advertise ( angularAccel_topic ); \n     // \n     // nh.advertise(currentMotorVelocities_topic); \n     // nh.advertise(motorAngularDisplacements_topic); \n     // \n     // start the IMU and filter \n     CurieIMU . begin (); \n     CurieIMU . setGyroRate ( 25 ); \n     CurieIMU . setAccelerometerRate ( 25 ); \n     filter . begin ( 25 ); \n\n     // Set the accelerometer range to 2G \n     CurieIMU . setAccelerometerRange ( 2 ); \n     // Set the gyroscope range to 250 degrees/second \n     CurieIMU . setGyroRange ( 250 ); \n\n     // initialize variables to pace updates to correct rate \n     microsPerReading   =   1000000   /   25 ; \n     microsPrevious   =   micros (); \n\n     AFMSbot . begin ();   // Start the bottom shield \n     AFMStop . begin ();   // Start the top shield \n   } \n\n   void   loop () \n   { \n     // str_msg.data = hello; \n     // chatter.publish(  str_msg ); \n     nh . spinOnce (); \n     delay ( 1000 ); \n\n     setMotor1Velocity ( stepMotor1_vel ); \n     setMotor3Velocity ( stepMotor2_vel ); \n     setMotor2Velocity ( stepMotor3_vel ); \n     // check if it s time to read data and update the filter \n     microsNow   =   micros (); \n     if   ( microsNow   -   microsPrevious   =   microsPerReading )   { \n\n       // read raw data from CurieIMU \n       CurieIMU . readMotionSensor ( aix ,   aiy ,   aiz ,   gix ,   giy ,   giz ); \n\n       // convert from raw data to gravity and degrees/second units \n       ax   =   convertRawAcceleration ( aix ); \n       ay   =   convertRawAcceleration ( aiy ); \n       az   =   convertRawAcceleration ( aiz ); \n       gx   =   convertRawGyro ( gix ); \n       gy   =   convertRawGyro ( giy ); \n       gz   =   convertRawGyro ( giz ); \n\n       // update the filter, which computes orientation \n       filter . updateIMU ( gx ,   gy ,   gz ,   ax ,   ay ,   az ); \n\n       roll   =   filter . getRoll (); \n       pitch   =   filter . getPitch (); \n       heading   =   filter . getYaw (); \n\n       linearAccel . x   =   ax ; \n       linearAccel . y   =   ay ; \n       linearAccel . z   =   az ; \n       angularAccel . x   =   gx ; \n       angularAccel . y   =   gy ; \n       angularAccel . z   =   gz ; \n\n       orientation . x   =   roll ; \n       orientation . y   =   pitch ; \n       orientation . z   =   heading ; \n\n       linearAccel_topic . publish (   linearAccel   ); \n       angularAccel_topic . publish (   angularAccel   ); \n       orientation_topic . publish (   orientation   ); \n\n       // increment previous time, so we keep proper pace \n       microsPrevious   =   microsPrevious   +   microsPerReading ; \n     } \n     // currentMotorVelocities.data[0] = stepMotor1_vel; \n     // currentMotorVelocities.data[1] = stepMotor2_vel; \n     // currentMotorVelocities.data[2] = stepMotor3_vel; \n     // currentMotorVelocities_topic.publish( currentMotorVelocities); \n   }", 
             "title": "ROSserial Node (Arduino Script)"
+        }, 
+        {
+            "location": "/serialLatency/", 
+            "text": "Serial Latency\n\n\nLatency in our Stack\n\n\nThere are significant advantages to using Linux as a complete OS, but there are often reservations about its real-time performance.\nThe official definition of real-time computing is a task that is executed within a given time, giving a deterministic system. Some applications need only an average response time, while others require that every deadline is met every time.\n\n\nGiven the architecture planned for our robot's stack, the following question is asked:\n\n\nCan our ROS setup maintain message transmission rates under 0.01s?\n\n\n\n\nNote: 0.01s restriction is necessary for our control algorithms to run effectively under any choice of parameters mentioned below.\n\n\n\n\nBecause we are utilizing Ubuntu (Not a RTOS) on our Pi, our system inherits unknown time delays between processes/tasks. In particular, there is latency in the serial communication between our Pi and our Arduino that we needed to investigate.\n\n\n\n\nSerial data exchanged between the Pi and Arduino is of particular concern to our robot's ability to:\n\n\n\n\nAvoid obstacles\n\n\nCollect data\n\n\nConverge to desired velocities, as guided by our control algorithms\n\n\nAsynchronous commands (including emergency terminations)\n\n\n\n\nParameters\n\n\nLatency in serial communication across our boards can be considered a function of the following:\n\n\n\n\nPhysical limits of serial transmission =\n This involves the limits on the Pi and Arduino to transmit and receive serial data, as well on the limits imposed by the transmission cable itself. Because these limits cannot be modified via software, these are not considered parameters in our solution space.\n\n\nROS topic queue lengths =\n FIFO queues utilized in ROS topic transmissions may cause a message to be processed when it is no longer relevant (seconds, milliseconds late). We want to keep this parameter as small as possible, but not small enough that we lose data necessary for intermittent steps.\n\n\nROS topic frequencies =\n This parameter (expressed in Hz) dictates how often messages are exchanged, per second. On a full OS, each publisher and subscriber is carried out in its own separate thread. The single-threaded nature of the Arduino introduces additional complexity to our latency calculations, as multiplexing must occur for the Arduino to feature multiple publishers/transmitters.\n\n\nROS message sizes =\n Inherently, the time taken to transmit a message will be proportional to the size of the message itself.\n\n\nROS stack serialization time =\n ROS performs XML serialization on messages exchanged between nodes. Although small, it is noteworthy that there is a source of duration associated to serialization between the Arduino and Pi.\n\n\nSerial baud rate =\n the rate at which information is transferred in a communication channel. In the serial port context, \"9600 baud\" means that the serial port is capable of transferring a maximum of 9600 bits per second. This parameter is bounded by he clock speed on the Arduino.\n\n\n\n\nSolution Space\n\n\nMinimal time delays in serial communication, within our stack can be achieved by choosing an optimal combination of: Baud Rate, Message Type (size implied), Topic frequency, and Queue length. The entire solution space consists of all possible combinations of these parameters, which would only be bounded by the physical limits of the boards and cable.\n\n\nQueue Length\n\n\n\n\n1, 5, 10, 20, 50, 100\n\n\n\n\nFrequency\n\n\n\n\n5, 10, 20, 50, 100, 200\n\n\n\n\nBaud Rate\n\n\n\n\n9600, 57600, 115200, 128000, 256000, 1000000, 2000000\n\n\n\n\nProcedures\n\n\nUsing python, bash scripting, and Arduino's CLI, we automated the testing of a large portion of the entire solution space.\n\n\nPreliminary Steps\n\n\nTwo dummy scripts were made (Arduino Subscriber \n Python Publisher), that served as templates. At each iteration, the templates were used to create a new script (with new parameters) that was deployed and ran using ROS.\n\n\nTesting Workflow\n\n\n\n\nNOTE: The red box above is expanded below. This is the data collection process.\n\n\n\n\nData Collection and Processing\n\n\nSample log file\n\n\n\n\n\n\nOur log files collected timestamps that were transmitted via ROS topic, as shown above.\n\n\nUsing MATLAB and Pandas, we calculated the maximum latency in each test case. We then proceeded to take the maximum latency, form the collection of maximum latencies.\n\n\n\n\nFindings\n\n\nMaximum latency found\n\n\n\n\n\n\n\n\nOur tests concluded that our ROS stack kept transmission times under 0.01s. Our maximum latency came at 8164965ns (0.008s), under the following parameters:\n\n\nFrequency: 10Hz | Queue Size: 1 | Baud Rate: 9600\n\n\n\n\n\n\nTest results allowed us to proceed in development knowing that our stack (control algorithms) would perform as intended, given that we remain within the minimum-maximum parameters tested.\n\n\n\n\n\n\nLatency Module\n\n\n\n\nThe entire testing module can be found and ran in our repository, under \"latency_module\".", 
+            "title": "Serial Latency"
+        }, 
+        {
+            "location": "/serialLatency/#serial-latency", 
+            "text": "", 
+            "title": "Serial Latency"
+        }, 
+        {
+            "location": "/serialLatency/#latency-in-our-stack", 
+            "text": "There are significant advantages to using Linux as a complete OS, but there are often reservations about its real-time performance.\nThe official definition of real-time computing is a task that is executed within a given time, giving a deterministic system. Some applications need only an average response time, while others require that every deadline is met every time.  Given the architecture planned for our robot's stack, the following question is asked:  Can our ROS setup maintain message transmission rates under 0.01s?   Note: 0.01s restriction is necessary for our control algorithms to run effectively under any choice of parameters mentioned below.   Because we are utilizing Ubuntu (Not a RTOS) on our Pi, our system inherits unknown time delays between processes/tasks. In particular, there is latency in the serial communication between our Pi and our Arduino that we needed to investigate.   Serial data exchanged between the Pi and Arduino is of particular concern to our robot's ability to:   Avoid obstacles  Collect data  Converge to desired velocities, as guided by our control algorithms  Asynchronous commands (including emergency terminations)", 
+            "title": "Latency in our Stack"
+        }, 
+        {
+            "location": "/serialLatency/#parameters", 
+            "text": "Latency in serial communication across our boards can be considered a function of the following:   Physical limits of serial transmission =  This involves the limits on the Pi and Arduino to transmit and receive serial data, as well on the limits imposed by the transmission cable itself. Because these limits cannot be modified via software, these are not considered parameters in our solution space.  ROS topic queue lengths =  FIFO queues utilized in ROS topic transmissions may cause a message to be processed when it is no longer relevant (seconds, milliseconds late). We want to keep this parameter as small as possible, but not small enough that we lose data necessary for intermittent steps.  ROS topic frequencies =  This parameter (expressed in Hz) dictates how often messages are exchanged, per second. On a full OS, each publisher and subscriber is carried out in its own separate thread. The single-threaded nature of the Arduino introduces additional complexity to our latency calculations, as multiplexing must occur for the Arduino to feature multiple publishers/transmitters.  ROS message sizes =  Inherently, the time taken to transmit a message will be proportional to the size of the message itself.  ROS stack serialization time =  ROS performs XML serialization on messages exchanged between nodes. Although small, it is noteworthy that there is a source of duration associated to serialization between the Arduino and Pi.  Serial baud rate =  the rate at which information is transferred in a communication channel. In the serial port context, \"9600 baud\" means that the serial port is capable of transferring a maximum of 9600 bits per second. This parameter is bounded by he clock speed on the Arduino.", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/serialLatency/#solution-space", 
+            "text": "Minimal time delays in serial communication, within our stack can be achieved by choosing an optimal combination of: Baud Rate, Message Type (size implied), Topic frequency, and Queue length. The entire solution space consists of all possible combinations of these parameters, which would only be bounded by the physical limits of the boards and cable.", 
+            "title": "Solution Space"
+        }, 
+        {
+            "location": "/serialLatency/#queue-length", 
+            "text": "1, 5, 10, 20, 50, 100", 
+            "title": "Queue Length"
+        }, 
+        {
+            "location": "/serialLatency/#frequency", 
+            "text": "5, 10, 20, 50, 100, 200", 
+            "title": "Frequency"
+        }, 
+        {
+            "location": "/serialLatency/#baud-rate", 
+            "text": "9600, 57600, 115200, 128000, 256000, 1000000, 2000000", 
+            "title": "Baud Rate"
+        }, 
+        {
+            "location": "/serialLatency/#procedures", 
+            "text": "Using python, bash scripting, and Arduino's CLI, we automated the testing of a large portion of the entire solution space.", 
+            "title": "Procedures"
+        }, 
+        {
+            "location": "/serialLatency/#preliminary-steps", 
+            "text": "Two dummy scripts were made (Arduino Subscriber   Python Publisher), that served as templates. At each iteration, the templates were used to create a new script (with new parameters) that was deployed and ran using ROS.", 
+            "title": "Preliminary Steps"
+        }, 
+        {
+            "location": "/serialLatency/#testing-workflow", 
+            "text": "NOTE: The red box above is expanded below. This is the data collection process.", 
+            "title": "Testing Workflow"
+        }, 
+        {
+            "location": "/serialLatency/#data-collection-and-processing", 
+            "text": "", 
+            "title": "Data Collection and Processing"
+        }, 
+        {
+            "location": "/serialLatency/#sample-log-file", 
+            "text": "Our log files collected timestamps that were transmitted via ROS topic, as shown above.  Using MATLAB and Pandas, we calculated the maximum latency in each test case. We then proceeded to take the maximum latency, form the collection of maximum latencies.", 
+            "title": "Sample log file"
+        }, 
+        {
+            "location": "/serialLatency/#findings", 
+            "text": "", 
+            "title": "Findings"
+        }, 
+        {
+            "location": "/serialLatency/#maximum-latency-found", 
+            "text": "Our tests concluded that our ROS stack kept transmission times under 0.01s. Our maximum latency came at 8164965ns (0.008s), under the following parameters:  Frequency: 10Hz | Queue Size: 1 | Baud Rate: 9600    Test results allowed us to proceed in development knowing that our stack (control algorithms) would perform as intended, given that we remain within the minimum-maximum parameters tested.", 
+            "title": "Maximum latency found"
+        }, 
+        {
+            "location": "/serialLatency/#latency-module", 
+            "text": "The entire testing module can be found and ran in our repository, under \"latency_module\".", 
+            "title": "Latency Module"
         }, 
         {
             "location": "/troubleshooting/", 

@@ -2,37 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
      <loc>/</loc>
-     <lastmod>2018-06-17</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>/systemArchitecture/</loc>
-     <lastmod>2018-06-17</lastmod>
+     <lastmod>2018-06-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/gettingStarted/</loc>
-     <lastmod>2018-06-17</lastmod>
+     <lastmod>2018-06-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/systemArchitecture/</loc>
+     <lastmod>2018-06-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/components/</loc>
-     <lastmod>2018-06-17</lastmod>
+     <lastmod>2018-06-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/codeBase/</loc>
-     <lastmod>2018-06-17</lastmod>
+     <lastmod>2018-06-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/serialLatency/</loc>
+     <lastmod>2018-06-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/troubleshooting/</loc>
-     <lastmod>2018-06-17</lastmod>
+     <lastmod>2018-06-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/projectSlackChannel/</loc>
-     <lastmod>2018-06-17</lastmod>
+     <lastmod>2018-06-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>

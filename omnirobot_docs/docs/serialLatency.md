@@ -6,11 +6,15 @@
 There are significant advantages to using Linux as a complete OS, but there are often reservations about its real-time performance.
 The official definition of real-time computing is a task that is executed within a given time, giving a deterministic system. Some applications need only an average response time, while others require that every deadline is met every time.
 
-Given the architecture planned for our robot's stack, the following question is asked: Can our ROS setup maintain message transmission rates under 0.01s?
+Given the architecture planned for our robot's stack, the following question is asked:
+
+Can our ROS setup maintain message transmission rates under 0.01s?
 
 * Note: 0.01s restriction is necessary for our control algorithms to run effectively under any choice of parameters mentioned below.
 
 Because we are utilizing Ubuntu (Not a RTOS) on our Pi, our system inherits unknown time delays between processes/tasks. In particular, there is latency in the serial communication between our Pi and our Arduino that we needed to investigate.
+
+![alt Serial Transmition Latency](images/serialLatency/testAproach.png "Serial Transmition Latency")
 
 Serial data exchanged between the Pi and Arduino is of particular concern to our robot's ability to:
 
@@ -48,25 +52,39 @@ Minimal time delays in serial communication, within our stack can be achieved by
 
 Using python, bash scripting, and Arduino's CLI, we automated the testing of a large portion of the entire solution space.
 
-### Preliminary Steps
+#### Preliminary Steps
 Two dummy scripts were made (Arduino Subscriber & Python Publisher), that served as templates. At each iteration, the templates were used to create a new script (with new parameters) that was deployed and ran using ROS.
 
 ## Testing Workflow
 
+![alt Test Workflow Diagram](images/serialLatency/testWorkflow.png "Test Workflow")
+
+NOTE: The red box above is expanded below. This is the data collection process.
+
+![alt Test Case Diagram](images/serialLatency/testCase.png "Test Case Diagram")
+
+
 ## Data Collection and Processing
 
 #### Sample log file
-  crip crip goose/
-  crip crip goose/
-  crip crip goose/
 
-* Our log files collected timestamps that were transmitted via ROS topic, as shown below.
+![alt Sample Log File](images/serialLatency/sampleLogFile.png "Sample Log File")
+
+* Our log files collected timestamps that were transmitted via ROS topic, as shown above.
 * Using MATLAB and Pandas, we calculated the maximum latency in each test case. We then proceeded to take the maximum latency, form the collection of maximum latencies.
 
 ## Findings
 
 #### Maximum latency found
 
-* Our tests concluded that our ROS stack kept transmission times under 0.01s. Our maximum latency came at INSERT_TIME_HERE, under the following parameters INSERT_PARAMETERS_HERE.
+![alt Findings Graph](images/serialLatency/findings.jpg "Findings Graph")
+
+* Our tests concluded that our ROS stack kept transmission times under 0.01s. Our maximum latency came at 8164965ns (0.008s), under the following parameters:
+
+    Frequency: 10Hz | Queue Size: 1 | Baud Rate: 9600
 
 * Test results allowed us to proceed in development knowing that our stack (control algorithms) would perform as intended, given that we remain within the minimum-maximum parameters tested.
+
+## Latency Module
+
+* The entire testing module can be found and ran in our repository, under "latency_module".

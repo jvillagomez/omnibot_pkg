@@ -14,10 +14,11 @@ copyright: 'Copyright &copy; 2018 PasqLab'
 pages:
   # - Index: index.md
   - Overview: index.md
-  - System Architecture: systemArchitecture.md
   - Getting Started: gettingStarted.md
+  - System Architecture: systemArchitecture.md
   - Components: components.md
   - Code Base: codeBase.md
+  - Serial Latency: serialLatency.md
   - Troubleshooting: troubleshooting.md
   - Project Slack Channel: projectSlackChannel.md
 

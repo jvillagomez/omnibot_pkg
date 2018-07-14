@@ -1,13 +1,10 @@
 #!/usr/bin/env python
-
 import rospy
-from std_msgs.msg import Int64
-from geometry_msgs.msg import Point
+from omnibot.msg import MotorArray
 
 
 def VelocityPublisher_talker():
-    pub = rospy.Publisher('setStepMotorVelocity_topic', Point, queue_size=10)
-    # rospy.init_node('setpoint_node', anonymous=True)
+    pub = rospy.Publisher('setStepMotorVelocity_topic', MotorArray, queue_size=10)
     rospy.init_node('velocityPublisher_node')
     rate = rospy.Rate(1) # 10hz
     velocity=100.00

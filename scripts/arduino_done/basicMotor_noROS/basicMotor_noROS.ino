@@ -12,9 +12,10 @@ Adafruit_StepperMotor *stepMotor_2 = AFMSbot.getStepper(200, 1);
 Adafruit_StepperMotor *stepMotor_3 = AFMSbot.getStepper(200, 2);
 
 // NOTE velocities are in rpm!!!!
-float stepMotor1_vel= 60;
-float stepMotor2_vel= 60;
-float stepMotor3_vel= 60;
+// TODO why do negative velociteies seem smoother and faster???
+float stepMotor1_vel= -100;
+float stepMotor2_vel= -100;
+float stepMotor3_vel= -100;
 
 void setup()
 {  

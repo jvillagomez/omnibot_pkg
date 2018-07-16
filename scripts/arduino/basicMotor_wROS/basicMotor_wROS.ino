@@ -25,6 +25,8 @@ float velocityArray[4] = {0}; // initialize motors at angular_vel=0; available g
 float velocityThreshold = 0.1;
 
 omnibot::MotorArray currentVelocities;
+omnibot::MotorArray angularDisplacements;
+
 
 // callback function for subscriber below. Updates velocities from FIFO queue
 void updateMotorVelocities( const omnibot::MotorArray& velocity_msg)
@@ -44,6 +46,28 @@ bool velocityIsAboveThreshold(float motorVel, float threshold)
   return false;
 }
 
+float getCurrentMotorVelocity(float velocity, float threshold)
+{
+  
+  if (velocityIsAboveThreshold(velocity, threshold)) {
+    return velocity;
+  }
+  return 0;
+}
+
+float getAngularDisplacement(float velocity)
+{
+  if (velocity > 0) {
+    return 0.0314159;
+  }
+  else if(velocity < 0) {
+    return -0.0314159;
+  }
+  else {
+    return 0;
+  } 
+}
+
 void motorStep(float motorVel, int motorNumber)
 {
   if (velocityIsAboveThreshold(motorVel, velocityThreshold)) {
@@ -56,16 +80,38 @@ void motorStep(float motorVel, int motorNumber)
   }
 }
 
+ros::Publisher currentMotorVelocities_topic("currentMotorVelocities_topic", &currentVelocities);
+ros::Publisher angularDisplacements_topic("angularDisplacements_topic", &angularDisplacements);
+
 void publishCurrentMotorVelocities()
 {
-  currentVelocities.motor1 = velocityArray[1];
-  currentVelocities.motor2 = velocityArray[2];
-  currentVelocities.motor3 = velocityArray[3];
+  currentVelocities.motor1 = getCurrentMotorVelocity(velocityArray[1], velocityThreshold);
+  currentVelocities.motor2 = getCurrentMotorVelocity(velocityArray[2], velocityThreshold);
+  currentVelocities.motor3 = getCurrentMotorVelocity(velocityArray[3], velocityThreshold);
+
+  currentMotorVelocities_topic.publish( &currentVelocities );
 }
+
+void publishAngularDisplacements()
+{ 
+  angularDisplacements.motor1 = getAngularDisplacement(currentVelocities.motor1);
+  angularDisplacements.motor2 = getAngularDisplacement(currentVelocities.motor2);
+  angularDisplacements.motor3 = getAngularDisplacement(currentVelocities.motor3);
+
+  angularDisplacements_topic.publish( &angularDisplacements );
+}
+
 
 // Set up motorVelocities subscriber
 ros::Subscriber<omnibot::MotorArray> motorVelocities("setStepMotorVelocity_topic", &updateMotorVelocities );
-ros::Publisher currentMotorVelocities_topic("currentMotorVelocities_topic", &currentVelocities);
+
+void activateMotors()
+{
+  for(int i = 1; i < 4; i++)
+  {
+    motorStep(velocityArray[i], i);
+  }
+}
 
 void setup()
 {
@@ -75,6 +121,7 @@ void setup()
   // notify master of our new publishers and subscribers
   nh.subscribe(motorVelocities);
   nh.advertise(currentMotorVelocities_topic);
+  nh.advertise(angularDisplacements_topic);
   
   AFMSbot.begin(); // Start the bottom shield
   AFMStop.begin(); // Start the top shield
@@ -86,15 +133,17 @@ void setup()
   motorArray[3] = stepMotor_3;
 }
 
+
 void loop()
 {
   nh.spinOnce();
 
-  for(int i = 1; i < 4; i++)
-  {
-    motorStep(velocityArray[i], i);
-  }
-
+  // for(int i = 1; i < 4; i++)
+  // {
+  //   motorStep(velocityArray[i], i);
+  // }
+  
+  activateMotors();
   publishCurrentMotorVelocities();
-  currentMotorVelocities_topic.publish( &currentVelocities );
+  publishAngularDisplacements();
 }

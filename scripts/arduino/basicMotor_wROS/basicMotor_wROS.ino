@@ -1,29 +1,40 @@
 #include <Wire.h>
 #include <Adafruit_MotorShield.h>
 #include <ros.h>
-#include <std_msgs/Int64.h>
-#include <std_msgs/Float32MultiArray.h>
-#include <geometry_msgs/Point.h>
 #include <omnibot/MotorArray.h>
-// ==================================================
-#include <std_msgs/String.h>
-#include <geometry_msgs/Vector3.h>
 
 ros::NodeHandle nh; // Instantiate ros handler object
 
 // Instantiate motorshield objects
+// This allows us to then interact with motors attached to our
+// motorshields.
 Adafruit_MotorShield AFMStop(0x61);
 Adafruit_MotorShield AFMSbot(0x60);
 
-// Get motor handler objects from motorshield objects
+// Initialize motor handler objects from the ports on the motorshields.
+// AFMStop.getStepper(200, 2) => motorShieldObject.getSTepper
 Adafruit_StepperMotor *stepMotor_1 = AFMStop.getStepper(200, 2);
 Adafruit_StepperMotor *stepMotor_2 = AFMSbot.getStepper(200, 1);
 Adafruit_StepperMotor *stepMotor_3 = AFMSbot.getStepper(200, 2);
 
+// Declare array of step motors
+// Array is declared to 4 members, but we only index motors from 1-3
+// This was done for clarity of new users.
 Adafruit_StepperMotor* motorArray[4];
-float velocityArray[4] = {0}; // initialize motors at angular_vel=0; available globally
+
+// Initialize motors at angular_vel=0; available globally
+float velocityArray[4] = {0}; 
+
+// Step motors will vibrate regardless of what velocity is sent to the motor.
+// If motor velocity is '0', the motor will still vibrate.
+// To avoid this, we define a thershold. if the desired velocity is below 
+// this threshold, no step will be issued to the motor.
+// The motor velocity variables will still reflect this desired velosity, 
+// even if it crosses the threshold.
 float velocityThreshold = 0.1;
 
+// Declare custom made variables that will hold our velocities and displacements,
+// that will be published to their respective topics.
 omnibot::MotorArray currentVelocities;
 omnibot::MotorArray angularDisplacements;
 

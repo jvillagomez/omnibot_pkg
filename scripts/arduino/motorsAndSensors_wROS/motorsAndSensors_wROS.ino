@@ -17,15 +17,13 @@
 // Sensor Libraries [END] --------------------------
 // =================================================
 
-ros::NodeHandle nh; // Instantiate ros handler object
+ros::NodeHandle nh;
 
 // ==============================================================
 // Motor variable declaration [START]----------------------------
-// Instantiate motorshield objects
 Adafruit_MotorShield AFMStop(0x61);
 Adafruit_MotorShield AFMSbot(0x60);
 
-// Get motor handler objects from motorshield objects
 Adafruit_StepperMotor *stepMotor_1 = AFMStop.getStepper(200, 2);
 Adafruit_StepperMotor *stepMotor_2 = AFMSbot.getStepper(200, 1);
 Adafruit_StepperMotor *stepMotor_3 = AFMSbot.getStepper(200, 2);
@@ -44,20 +42,16 @@ ros::Publisher angularDisplacements_topic("angularDisplacements_topic", &angular
 
 // ==============================================================
 // Sensor variable declaration [START]----------------------------
-// preallocate Vector3 variables to hold orientation/acceleration
 geometry_msgs::Vector3 orientation;
 geometry_msgs::Vector3 linearAccel;
 geometry_msgs::Vector3 angularAccel;
 
-// Set up acceleation and orienation publishers
 ros::Publisher linearAccel_topic("linearAccel_topic", &linearAccel);
 ros::Publisher angularAccel_topic("angularAccel_topic", &angularAccel);
 ros::Publisher orientation_topic("orientation_topic", &orientation);
 
-// instantiate Madgwick filter object
 Madgwick filter;
 
-// initialize sensor data variables
 unsigned long microsPerReading, microsPrevious;
 float accelScale, gyroScale;
 
@@ -157,7 +151,6 @@ void activateMotors()
 // Motor function and callbacks [END]----------------------------
 // ==============================================================
 
-
 // ==============================================================
 // Sensor function and callbacks [START]--------------------------
 float convertRawAcceleration(int aRaw) {
@@ -235,21 +228,18 @@ void processAndPublishSensorData()
 
 void setup()
 {
-  // =============================================
-  // Motor setup [START]--------------------------
   Serial.begin(115200); // set baud rate
   nh.initNode();
 
-  // notify master of our new publishers and subscribers
+  // =============================================
+  // Motor setup [START]--------------------------
   nh.subscribe(motorVelocities);
   nh.advertise(currentMotorVelocities_topic);
   nh.advertise(angularDisplacements_topic);
   
-  AFMSbot.begin(); // Start the bottom shield
-  AFMStop.begin(); // Start the top shield
+  AFMSbot.begin();
+  AFMStop.begin();
 
-  // add motor instances to our motorArray
-  // ommited index=0 for clarity
   motorArray[1] = stepMotor_1;
   motorArray[2] = stepMotor_2;
   motorArray[3] = stepMotor_3;
@@ -262,19 +252,14 @@ void setup()
   nh.advertise(linearAccel_topic);
   nh.advertise(angularAccel_topic);
   
-  // start the IMU and filter
   CurieIMU.begin();
   CurieIMU.setGyroRate(25);
   CurieIMU.setAccelerometerRate(25);
   filter.begin(25);
 
-  // Set the accelerometer range to 2G
   CurieIMU.setAccelerometerRange(2);
-  
-  // Set the gyroscope range to 250 degrees/second
   CurieIMU.setGyroRange(250);
 
-  // initialize variables to pace updates to correct rate
   microsPerReading = 1000000 / 25;
   microsPrevious = micros();
   // Sensor setup [END]--------------------------
@@ -284,7 +269,7 @@ void setup()
 
 void loop()
 {
-  nh.spinOnce(); // very important to understand for protothreading
+  nh.spinOnce();
 
   // ====================================================
   // Motor loop [START]----------------------------------

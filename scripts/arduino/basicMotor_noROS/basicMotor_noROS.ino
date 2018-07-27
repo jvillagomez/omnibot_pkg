@@ -1,12 +1,13 @@
 #include <Wire.h>
-#include <Adafruit_MotorShield.h>
+#include <Adafruit_MotorShield.h> // library nbeeded to interact with motorshields
 
-// Instantiate motorshield objects
+// Declare motorshield objects at their locations
 Adafruit_MotorShield AFMStop(0x61);
 Adafruit_MotorShield AFMSbot(0x60);
 
 // Get motor handler objects from motorshield objects
-// documentation on motors states 200 steps per rev
+// Documentation on motors states 200 steps per rev
+// AFMStop.getStepper(200, 2) => AFMStop.getStepper(#OfSteps, motorShieldPort#)
 Adafruit_StepperMotor *stepMotor_1 = AFMStop.getStepper(200, 2);
 Adafruit_StepperMotor *stepMotor_2 = AFMSbot.getStepper(200, 1);
 Adafruit_StepperMotor *stepMotor_3 = AFMSbot.getStepper(200, 2);
@@ -18,8 +19,8 @@ float stepMotor3_vel= 60;
 
 void setup()
 {  
-  AFMSbot.begin(); // Start the bottom shield
-  AFMStop.begin(); // Start the top shield
+  AFMSbot.begin(); // Initialize the bottom shield
+  AFMStop.begin(); // Initialize the top shield
 
   stepMotor_1->setSpeed(stepMotor1_vel); // top 
   stepMotor_2->setSpeed(stepMotor2_vel); // bot

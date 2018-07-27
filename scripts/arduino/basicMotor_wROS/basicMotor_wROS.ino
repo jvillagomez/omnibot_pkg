@@ -5,7 +5,7 @@
 
 ros::NodeHandle nh; // Instantiate ros handler object
 
-// Instantiate motorshield objects
+// Declare motorshield objects
 // This allows us to then interact with motors attached to our
 // motorshields.
 Adafruit_MotorShield AFMStop(0x61);
@@ -23,6 +23,7 @@ Adafruit_StepperMotor *stepMotor_3 = AFMSbot.getStepper(200, 2);
 Adafruit_StepperMotor* motorArray[4];
 
 // Initialize motors at angular_vel=0; available globally
+// NOTE => Velocities are in RPMs !!
 float velocityArray[4] = {0}; 
 
 // Step motors will vibrate regardless of what velocity is sent to the motor.
@@ -36,7 +37,7 @@ float velocityThreshold = 0.1;
 // Declare custom made variables that will hold our velocities and displacements,
 // that will be published to their respective topics.
 omnibot::MotorArray currentVelocities;
-omnibot::MotorArray angularDisplacements;
+omnibot::MotorArray angularDisplacements; // NOTE DISPLACEMNTS ARE IN RADIANS!!
 
 // Callback function for 'setStepMotorVelocity_topic' subscriber below. 
 // Updates velocity variables from FIFO queue, but does not send a step 

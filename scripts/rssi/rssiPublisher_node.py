@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 import rospy #import ROS pip package for using ROS library
 from omnibot.msg import MotorArray # import our custom ROS msg types
-from rssi_help import RSSI_Scan #Imports the RSSI_scan class from the sibling rssi file
-from rssi_help import RSSI_Localizer
+from rssi import RSSI_Scan #Imports the RSSI_scan class from the sibling rssi file
+from rssi import RSSI_Localizer
 
 # getNetworks:
     # Description:

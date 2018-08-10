@@ -1,6 +1,6 @@
 <launch>
   <!-- Load RSSI Params from params/rssi.yaml -->
-  <rosparam command="load" file="$(find omnibot)params/rssi.yaml" />
+  <rosparam command="load" file="$(find omnibot)params/rssi/rssi.yaml" />
   <!-- Parameter Model -->
   <!-- 'rssi': {
       'accessPoints': {

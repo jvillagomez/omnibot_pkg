@@ -1,0 +1,2114 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Documentation on design and deployment of OmniBot catkin package">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.5, mkdocs-material-2.9.2">
+    
+    
+      
+        <title>Wifi Localization - OmniRobot</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.ba0fd1a6.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.6079476c.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#546e7a">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="blue-grey" data-md-color-accent="cyan">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#wifi-localization" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="OmniRobot" class="md-header-nav__button md-logo">
+          
+            <img src="../images/OmniRobot_wheelLogo.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                OmniRobot
+              </span>
+              <span class="md-header-nav__topic">
+                Wifi Localization
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/jvillagomez/omnibot_pkg/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      jvillagomez/omnibot_pkg
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <span class="md-nav__button md-logo">
+      
+        <img src="../images/OmniRobot_wheelLogo.png" width="48" height="48">
+      
+    </span>
+    OmniRobot
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/jvillagomez/omnibot_pkg/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      jvillagomez/omnibot_pkg
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../gettingStarted/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../systemArchitecture/" title="System Architecture" class="md-nav__link">
+      System Architecture
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../components/" title="Components" class="md-nav__link">
+      Components
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../codeBase/" title="Code Base" class="md-nav__link">
+      Code Base
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../serialLatency/" title="Serial Latency" class="md-nav__link">
+      Serial Latency
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Wifi Localization
+      </label>
+    
+    <a href="./" title="Wifi Localization" class="md-nav__link md-nav__link--active">
+      Wifi Localization
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#rssi-module" title="RSSI Module" class="md-nav__link">
+    RSSI Module
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scan-class" title="Scan Class" class="md-nav__link">
+    Scan Class
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rssi-module_1" title="RSSI Module" class="md-nav__link">
+    RSSI Module
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#localization-class" title="Localization Class" class="md-nav__link">
+    Localization Class
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ros-wrapper" title="ROS Wrapper" class="md-nav__link">
+    ROS Wrapper
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rssi-node" title="RSSI Node" class="md-nav__link">
+    RSSI Node
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../projectSlackChannel/" title="Project Slack Channel" class="md-nav__link">
+      Project Slack Channel
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#rssi-module" title="RSSI Module" class="md-nav__link">
+    RSSI Module
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scan-class" title="Scan Class" class="md-nav__link">
+    Scan Class
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rssi-module_1" title="RSSI Module" class="md-nav__link">
+    RSSI Module
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#localization-class" title="Localization Class" class="md-nav__link">
+    Localization Class
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ros-wrapper" title="ROS Wrapper" class="md-nav__link">
+    ROS Wrapper
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rssi-node" title="RSSI Node" class="md-nav__link">
+    RSSI Node
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/jvillagomez/omnibot_pkg/edit/master/docs/wifiLocalization.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="wifi-localization">Wifi Localization</h1>
+<p>RSSI-based self-loclaization is utilized as a substitute for Bluetooth and/or GPS localization.
+Our module was designed entirely around Xiuyan Zhu's and Yuan Feng's 'RSSI-based Algorithm for Indoor Localization' 
+paper, published here: https://file.scirp.org/pdf/CN_2013071010352139.pdf</p>
+<p>Using the wifi signal detected from three separate access points, we can use the log-model (as described in the paper) 
+to estimate our distance from each access point. With a distance estimated fomr each node, we use the trilateral-localization
+algortihm to estimate a location.</p>
+<p>Note: The location of each node must not be fixed, but must be specified.</p>
+<p>Log Model
+CS = Current Signal from node x
+RS = Reference Signal for node x
+CD = Current Distance from node x
+RD = Reference Distance for node x
+n = Signal Attenuation Factor
+log = log w/base-10</p>
+<p>[CS] = [RS]-[10*nlog(CD/RD)]</p>
+<p>Solving for CD:
+[Beta] = [(RS-CS)/(10<em>n)]
+[CD] = [10^Beta]</em>[RD]</p>
+<p>For more information on the python rssi module, visit: 
+https://github.com/jvillagomez/rssi_module</p>
+<h2 id="rssi-module">RSSI Module</h2>
+<h3 id="scan-class">Scan Class</h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313</pre></div></td><td class="code"><div class="codehilite"><pre><span class="c">#!/usr/bin/env python</span>
+<span class="c"># RSSI_Scan</span>
+    <span class="c"># Use:</span>
+        <span class="c"># from rssi import RSSI_Scan</span>
+        <span class="c"># rssi_scan_instance = RSSI_Scan(&#39;network_interface_name) </span>
+    <span class="c"># -------------------------------------------------------</span>
+    <span class="c"># Description:</span>
+        <span class="c"># Allows a user to query all available accesspoints available.</span>
+        <span class="c"># User has the option of define a specific set of access </span>
+        <span class="c"># points to query.</span>
+    <span class="c"># -------------------------------------------------------</span>
+    <span class="c"># Input: interface name</span>
+        <span class="c"># [ie. network interface names: wlp1s0m, docker0, wlan0] </span>
+<span class="k">class</span> <span class="nc">RSSI_Scan</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="c"># Allows us to declare a network interface externally.</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">interface</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">interface</span> <span class="o">=</span> <span class="n">interface</span>
+
+    <span class="c"># getRawNetworkScan</span>
+        <span class="c"># Description:</span>
+            <span class="c"># Runs the Ubuntu command &#39;iwlist&#39; to scan for available networks.</span>
+            <span class="c"># Returns the raw console window output (unparsed).</span>
+        <span class="c"># ----------------------------------------------------------------</span>
+        <span class="c"># Input: (optional) </span>
+            <span class="c">#   sudo: bool; defaults to false. False will not refresh the </span>
+            <span class="c">#         network interface upon query. Sudo=true will require </span>
+            <span class="c">#         the user will need to enter a sudo password at runtime.</span>
+        <span class="c"># ----------------------------------------------------------------</span>
+        <span class="c"># Returns: Raw terminal output</span>
+            <span class="c"># {</span>
+            <span class="c">#     &#39;output&#39;:&#39;&#39;&#39;wlp1s0    Scan completed :</span>
+            <span class="c">#   Cell 01 - Address: A0:3D:6F:26:77:8E</span>
+            <span class="c">#             Channel:144</span>
+            <span class="c">#             Frequency:5.72 GHz</span>
+            <span class="c">#             Quality=43/70  Signal level=-67 dBm  </span>
+            <span class="c">#             Encryption key:on</span>
+            <span class="c">#             ESSID:&quot;ucrwpa&quot;</span>
+            <span class="c">#             Bit Rates:24 Mb/s; 36 Mb/s; 48 Mb/s; 54 Mb/s</span>
+            <span class="c">#             Mode:Master</span>
+            <span class="c">#   Cell 02 - Address: A0:3D:6F:26:77:82</span>
+            <span class="c">#             Channel:1</span>
+            <span class="c">#             Frequency:2.412 GHz (Channel 1)</span>
+            <span class="c">#             Quality=43/70  Signal level=-67 dBm  </span>
+            <span class="c">#             Encryption key:on</span>
+            <span class="c">#             ESSID:&quot;eduroam&quot;</span>
+            <span class="c">#             Bit Rates:18 Mb/s; 24 Mb/s; 36 Mb/s; 48 Mb/s; 54 Mb/s</span>
+            <span class="c">#             Mode:Master&#39;&#39;&#39;,</span>
+            <span class="c">#     &#39;error&#39;:&#39;&#39;</span>
+            <span class="c"># }</span>
+    <span class="k">def</span> <span class="nf">getRawNetworkScan</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sudo</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+        <span class="c"># Scan command &#39;iwlist interface scan&#39; needs to be fed as an array.</span>
+        <span class="k">if</span> <span class="n">sudo</span><span class="p">:</span>
+            <span class="n">scan_command</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;sudo&#39;</span><span class="p">,</span><span class="s">&#39;iwlist&#39;</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">interface</span><span class="p">,</span><span class="s">&#39;scan&#39;</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">scan_command</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;iwlist&#39;</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">interface</span><span class="p">,</span><span class="s">&#39;scan&#39;</span><span class="p">]</span>
+        <span class="c"># Open a subprocess running the scan command.</span>
+        <span class="n">scan_process</span> <span class="o">=</span> <span class="n">Popen</span><span class="p">(</span><span class="n">scan_command</span><span class="p">,</span> <span class="n">stdout</span><span class="o">=</span><span class="n">PIPE</span><span class="p">,</span> <span class="n">stderr</span><span class="o">=</span><span class="n">PIPE</span><span class="p">)</span>
+        <span class="c"># Block all execution, until the scanning completes.</span>
+        <span class="n">scan_process</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+        <span class="c"># Returns the &#39;success&#39; and &#39;error&#39; output.</span>
+        <span class="p">(</span><span class="n">raw_output</span><span class="p">,</span> <span class="n">raw_error</span><span class="p">)</span> <span class="o">=</span> <span class="n">scan_process</span><span class="o">.</span><span class="n">communicate</span><span class="p">()</span> 
+        <span class="c"># Returns all output in a dictionary for easy retrieval.</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s">&#39;output&#39;</span><span class="p">:</span><span class="n">raw_output</span><span class="p">,</span><span class="s">&#39;error&#39;</span><span class="p">:</span><span class="n">raw_error</span><span class="p">}</span>
+
+    <span class="c"># getSSID</span>
+        <span class="c"># Description:</span>
+            <span class="c"># Parses the &#39;SSID&#39; for a given cell.</span>
+        <span class="c"># -----------------------------------------------</span>
+        <span class="c"># Input: (Raw string)</span>
+            <span class="c"># 01 - Address: A0:3D:6F:26:77:8E</span>
+            <span class="c"># Channel:144</span>
+            <span class="c"># Frequency:5.72 GHz</span>
+            <span class="c"># Quality=43/70  Signal level=-67 dBm  </span>
+            <span class="c"># Encryption key:on</span>
+            <span class="c"># ESSID:&quot;ucrwpa&quot;</span>
+            <span class="c"># Bit Rates:24 Mb/s; 36 Mb/s; 48 Mb/s; 54 Mb/s</span>
+            <span class="c"># Mode:Master</span>
+        <span class="c"># -----------------------------------------------</span>
+        <span class="c"># Returns:</span>
+            <span class="c"># &#39;ucrwpa&#39;</span>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">getSSID</span><span class="p">(</span><span class="n">raw_cell</span><span class="p">):</span>
+        <span class="n">ssid</span> <span class="o">=</span> <span class="n">raw_cell</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;ESSID:&quot;&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">ssid</span> <span class="o">=</span> <span class="n">ssid</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;&quot;&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">ssid</span>
+
+    <span class="c"># getQuality</span>
+        <span class="c"># Description:</span>
+            <span class="c"># Parses &#39;Quality level&#39; for a given cell.</span>
+        <span class="c"># -----------------------------------------------</span>
+        <span class="c"># Input: (Raw string)</span>
+            <span class="c"># 01 - Address: A0:3D:6F:26:77:8E</span>
+            <span class="c"># Channel:144</span>
+            <span class="c"># Frequency:5.72 GHz</span>
+            <span class="c"># Quality=43/70  Signal level=-67 dBm  </span>
+            <span class="c"># Encryption key:on</span>
+            <span class="c"># ESSID:&quot;ucrwpa&quot;</span>
+            <span class="c"># Bit Rates:24 Mb/s; 36 Mb/s; 48 Mb/s; 54 Mb/s</span>
+            <span class="c"># Mode:Master</span>
+        <span class="c"># -----------------------------------------------</span>
+        <span class="c"># Returns:</span>
+            <span class="c"># &#39;43/70&#39;</span>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">getQuality</span><span class="p">(</span><span class="n">raw_cell</span><span class="p">):</span>
+        <span class="n">quality</span> <span class="o">=</span> <span class="n">raw_cell</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;Quality=&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">quality</span> <span class="o">=</span> <span class="n">quality</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39; &#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">quality</span>
+
+    <span class="c"># getSignalLevel</span>
+        <span class="c"># Description:</span>
+            <span class="c"># Parses &#39;Signal level&#39; for a given cell.</span>
+            <span class="c"># Measurement is in &#39;dBm&#39;.</span>
+        <span class="c"># -----------------------------------------------</span>
+        <span class="c"># Input: (Raw string)</span>
+            <span class="c"># 01 - Address: A0:3D:6F:26:77:8E</span>
+            <span class="c"># Channel:144</span>
+            <span class="c"># Frequency:5.72 GHz</span>
+            <span class="c"># Quality=43/70  Signal level=-67 dBm  </span>
+            <span class="c"># Encryption key:on</span>
+            <span class="c"># ESSID:&quot;ucrwpa&quot;</span>
+            <span class="c"># Bit Rates:24 Mb/s; 36 Mb/s; 48 Mb/s; 54 Mb/s</span>
+            <span class="c"># Mode:Master</span>
+        <span class="c"># -----------------------------------------------</span>
+        <span class="c"># Returns: (string)</span>
+            <span class="c"># &#39;-67&#39;    </span>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">getSignalLevel</span><span class="p">(</span><span class="n">raw_cell</span><span class="p">):</span>
+        <span class="n">signal</span> <span class="o">=</span> <span class="n">raw_cell</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;Signal level=&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">signal</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">signal</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39; &#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">signal</span>
+
+    <span class="c"># parseCell</span>
+        <span class="c"># Description:</span>
+            <span class="c"># Takes a raw cell string and parses it into a dictionary.</span>
+        <span class="c"># -----------------------------------------------</span>
+        <span class="c"># Input: (Raw string)</span>
+            <span class="c"># &#39;&#39;&#39;01 - Address: A0:3D:6F:26:77:8E</span>
+            <span class="c"># Channel:144</span>
+            <span class="c"># Frequency:5.72 GHz</span>
+            <span class="c"># Quality=43/70  Signal level=-67 dBm  </span>
+            <span class="c"># Encryption key:on</span>
+            <span class="c"># ESSID:&quot;ucrwpa&quot;</span>
+            <span class="c"># Bit Rates:24 Mb/s; 36 Mb/s; 48 Mb/s; 54 Mb/s</span>
+            <span class="c"># Mode:Master&#39;&#39;&#39;</span>
+        <span class="c"># -----------------------------------------------</span>
+        <span class="c"># Returns:</span>
+            <span class="c"># {</span>
+            <span class="c">#     &#39;ssid&#39;:&#39;ucrwpa&#39;,</span>
+            <span class="c">#     &#39;quality&#39;:&#39;43/70&#39;,</span>
+            <span class="c">#     &#39;signal&#39;:&#39;-67&#39;</span>
+            <span class="c"># }    </span>
+    <span class="k">def</span> <span class="nf">parseCell</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">raw_cell</span><span class="p">):</span>
+        <span class="n">cell</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s">&#39;ssid&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">getSSID</span><span class="p">(</span><span class="n">raw_cell</span><span class="p">),</span>
+            <span class="s">&#39;quality&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">getQuality</span><span class="p">(</span><span class="n">raw_cell</span><span class="p">),</span>
+            <span class="s">&#39;signal&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">getSignalLevel</span><span class="p">(</span><span class="n">raw_cell</span><span class="p">)</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">cell</span>
+
+    <span class="c"># formatCells</span>
+        <span class="c"># Description:</span>
+            <span class="c"># Every network listed is considered a &#39;cell.</span>
+            <span class="c"># This function parses each cell into a dictionary.</span>
+            <span class="c"># Returns list of dictionaries. Makes use of &#39;parseCell&#39;.</span>
+            <span class="c"># If not networks were detected, returns False.</span>
+        <span class="c"># -----------------------------------------------</span>
+        <span class="c"># Input: (Raw terminal string)</span>
+            <span class="c"># &#39;&#39;&#39;01 - Address: A0:3D:6F:26:77:8E</span>
+            <span class="c"># Channel:144</span>
+            <span class="c"># Frequency:5.72 GHz</span>
+            <span class="c"># Quality=43/70  Signal level=-67 dBm  </span>
+            <span class="c"># Encryption key:on</span>
+            <span class="c"># ESSID:&quot;ucrwpa&quot;</span>
+            <span class="c"># Bit Rates:24 Mb/s; 36 Mb/s; 48 Mb/s; 54 Mb/s</span>
+            <span class="c"># Mode:Master</span>
+            <span class="c"># 02 - Address: A0:3D:6F:26:77:8E</span>
+            <span class="c"># Channel:144</span>
+            <span class="c"># Frequency:5.72 GHz</span>
+            <span class="c"># Quality=30/70  Signal level=-42 dBm  </span>
+            <span class="c"># Encryption key:on</span>
+            <span class="c"># ESSID:&quot;dd-wrt&quot;</span>
+            <span class="c"># Bit Rates:24 Mb/s; 36 Mb/s; 48 Mb/s; 54 Mb/s</span>
+            <span class="c"># Mode:Master&#39;&#39;&#39;</span>
+        <span class="c"># -----------------------------------------------</span>
+        <span class="c"># Returns: (Array of dictionaries)</span>
+            <span class="c"># [</span>
+            <span class="c">#     {</span>
+            <span class="c">#         &#39;ssid&#39;:&#39;ucrwpa&#39;,</span>
+            <span class="c">#         &#39;quality&#39;:&#39;43/70&#39;,</span>
+            <span class="c">#         &#39;signal&#39;:&#39;-67&#39;</span>
+            <span class="c">#     },</span>
+            <span class="c">#     {</span>
+            <span class="c">#         &#39;ssid&#39;:&#39;dd-wrt&#39;,</span>
+            <span class="c">#         &#39;quality&#39;:&#39;30/70&#39;,</span>
+            <span class="c">#         &#39;signal&#39;:&#39;-42&#39;</span>
+            <span class="c">#     }</span>
+            <span class="c"># ]    </span>
+    <span class="k">def</span> <span class="nf">formatCells</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">raw_cell_string</span><span class="p">):</span>
+        <span class="n">raw_cells</span> <span class="o">=</span> <span class="n">raw_cell_string</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;Cell&#39;</span><span class="p">)</span> <span class="c"># Divide raw string into raw cells.</span>
+        <span class="n">raw_cells</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c"># Remove unneccesary &quot;Scan Completed&quot; message.</span>
+        <span class="k">if</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">raw_cells</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span> <span class="c"># Continue execution, if atleast one network is detected.</span>
+            <span class="c"># Iterate through raw cells for parsing.</span>
+            <span class="c"># Array will hold all parsed cells as dictionaries.</span>
+            <span class="n">formatted_cells</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">parseCell</span><span class="p">(</span><span class="n">cell</span><span class="p">)</span> <span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">raw_cells</span><span class="p">]</span>
+            <span class="c"># Return array of dictionaries, containing cells.</span>
+            <span class="k">return</span> <span class="n">formatted_cells</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">&quot;Networks not detected.&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="bp">False</span>
+        <span class="c"># TODO implement function in ndoe to process this boolean (False)</span>
+
+    <span class="c"># filterAccessPoints</span>
+        <span class="c"># Description:</span>
+            <span class="c"># If the &#39;networks&#39; parameter is passed to the &#39;getAPinfo&#39;</span>
+            <span class="c"># function, then this method will filter out all irrelevant </span>
+            <span class="c"># access-points. Access points specified in &#39;networks&#39; array </span>
+            <span class="c"># will be returned (if available).</span>
+        <span class="c"># -----------------------------------------------</span>
+        <span class="c"># Input: (Parsed array of cell dictionaries)</span>
+            <span class="c"># all_access_points = </span>
+            <span class="c"># [</span>
+            <span class="c">#     {</span>
+            <span class="c">#         &#39;ssid&#39;:&#39;ucrwpa&#39;,</span>
+            <span class="c">#         &#39;quality&#39;:&#39;43/70&#39;,</span>
+            <span class="c">#         &#39;signal&#39;:&#39;-67&#39;</span>
+            <span class="c">#     },</span>
+            <span class="c">#     {</span>
+            <span class="c">#         &#39;ssid&#39;:&#39;dd-wrt&#39;,</span>
+            <span class="c">#         &#39;quality&#39;:&#39;30/70&#39;,</span>
+            <span class="c">#         &#39;signal&#39;:&#39;-42&#39;</span>
+            <span class="c">#     },</span>
+            <span class="c">#     {</span>
+            <span class="c">#         &#39;ssid&#39;:&#39;linksys&#39;,</span>
+            <span class="c">#         &#39;quality&#39;:&#39;58/70&#39;,</span>
+            <span class="c">#         &#39;signal&#39;:&#39;-24&#39;</span>
+            <span class="c">#     }</span>
+            <span class="c"># ] </span>
+            <span class="c"># network_names = (array of network names)</span>
+            <span class="c"># [&#39;ucrwpa&#39;,&#39;dd-wrt&#39;]</span>
+        <span class="c"># -----------------------------------------------</span>
+        <span class="c"># Returns: (Array of dictionaries)</span>
+            <span class="c"># [</span>
+            <span class="c">#     {</span>
+            <span class="c">#         &#39;ssid&#39;:&#39;ucrwpa&#39;,</span>
+            <span class="c">#         &#39;quality&#39;:&#39;43/70&#39;,</span>
+            <span class="c">#         &#39;signal&#39;:&#39;-67&#39;</span>
+            <span class="c">#     },</span>
+            <span class="c">#     {</span>
+            <span class="c">#         &#39;ssid&#39;:&#39;dd-wrt&#39;,</span>
+            <span class="c">#         &#39;quality&#39;:&#39;30/70&#39;,</span>
+            <span class="c">#         &#39;signal&#39;:&#39;-42&#39;</span>
+            <span class="c">#     }</span>
+            <span class="c"># ] </span>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">filterAccessPoints</span><span class="p">(</span><span class="n">all_access_points</span><span class="p">,</span> <span class="n">network_names</span><span class="p">):</span>
+        <span class="n">focus_points</span> <span class="o">=</span> <span class="p">[]</span> <span class="c"># Array holding the access-points of concern.</span>
+        <span class="c"># Iterate throguh all access-points found.</span>
+        <span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">all_access_points</span><span class="p">:</span>
+            <span class="c"># Check if current AP is in our desired list.</span>
+            <span class="k">if</span> <span class="n">point</span><span class="p">[</span><span class="s">&#39;ssid&#39;</span><span class="p">]</span> <span class="ow">in</span> <span class="n">network_names</span><span class="p">:</span>
+                <span class="n">focus_points</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">point</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">focus_points</span>
+        <span class="c"># TODO implement something incase our desired ones were not found</span>
+
+    <span class="c"># getAPinfo</span>
+        <span class="c"># Description:</span>
+            <span class="c"># Method returns all (or chosen) available access points (in range).</span>
+            <span class="c"># Takes 2 optional parameters: </span>
+            <span class="c">#   &#39;networks&#39; (array): </span>
+            <span class="c">#       Lists all ssid&#39;s of concern. Will return only the available access </span>
+            <span class="c">#       points listed here. If not provided, will return ALL access-points in range.        </span>
+            <span class="c">#   &#39;sudo&#39; (bool): </span>
+            <span class="c">#       Whether of not method should use sudo privileges. If user uses sudo</span>
+            <span class="c">#       privileges, the network manager will be refreshed and will return </span>
+            <span class="c">#       a fresh list of access-points available. If sudo is not provided, </span>
+            <span class="c">#       a cached list will be returned. Cached list gets updated periodically.</span>
+        <span class="c"># -----------------------------------------------</span>
+        <span class="c"># Input: (Parsed array of cell dictionaries)</span>
+            <span class="c"># networks = (array of network names)</span>
+            <span class="c"># [&#39;ucrwpa&#39;,&#39;dd-wrt&#39;]</span>
+            <span class="c"># sudo = True || False</span>
+        <span class="c"># -----------------------------------------------</span>
+        <span class="c"># Returns: (Array of dictionaries)</span>
+            <span class="c"># [</span>
+            <span class="c">#     {</span>
+            <span class="c">#         &#39;ssid&#39;:&#39;ucrwpa&#39;,</span>
+            <span class="c">#         &#39;quality&#39;:&#39;43/70&#39;,</span>
+            <span class="c">#         &#39;signal&#39;:&#39;-67&#39;</span>
+            <span class="c">#     },</span>
+            <span class="c">#     {</span>
+            <span class="c">#         &#39;ssid&#39;:&#39;dd-wrt&#39;,</span>
+            <span class="c">#         &#39;quality&#39;:&#39;30/70&#39;,</span>
+            <span class="c">#         &#39;signal&#39;:&#39;-42&#39;</span>
+            <span class="c">#     }</span>
+            <span class="c"># ] </span>
+    <span class="k">def</span> <span class="nf">getAPinfo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">networks</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">sudo</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+        <span class="c"># TODO implement error callback if error is raise in subprocess</span>
+        <span class="c"># Unparsed access-point listing. AccessPoints are strings.</span>
+        <span class="n">raw_scan_output</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getRawNetworkScan</span><span class="p">(</span><span class="n">sudo</span><span class="p">)[</span><span class="s">&#39;output&#39;</span><span class="p">]</span> 
+        <span class="c"># Parsed access-point listing. Access-points are dictionaries.</span>
+        <span class="n">all_access_points</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">formatCells</span><span class="p">(</span><span class="n">raw_scan_output</span><span class="p">)</span>
+        <span class="c"># Checks if access-points were found.</span>
+        <span class="k">if</span> <span class="n">all_access_points</span><span class="p">:</span>
+            <span class="c"># Checks if specific networks were declared.</span>
+            <span class="k">if</span> <span class="n">networks</span><span class="p">:</span>
+                <span class="c"># Return specific access-points found.</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">filterAccessPoints</span><span class="p">(</span><span class="n">all_access_points</span><span class="p">,</span> <span class="n">networks</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c"># Return ALL access-points found.</span>
+                <span class="k">return</span> <span class="n">all_access_points</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c"># No access-points were found. </span>
+            <span class="k">return</span> <span class="bp">False</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="rssi-module_1">RSSI Module</h2>
+<h3 id="localization-class">Localization Class</h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269</pre></div></td><td class="code"><div class="codehilite"><pre><span class="c">#!/usr/bin/env python</span>
+<span class="c"># RSSI_Localizer</span>
+    <span class="c"># Use:</span>
+        <span class="c"># from rssi import RSSI_Localizer</span>
+        <span class="c"># rssi_localizer_instance = RSSI_Localizer()</span>
+    <span class="c"># -------------------------------------------------------</span>
+    <span class="c"># Description:</span>
+        <span class="c"># This class helps a user implement rssi-based localization.</span>
+        <span class="c"># The algorithm assumes the logarithmic distance-path-loss model</span>
+        <span class="c"># And assumes a minimum of 3 (or more) access points.</span>
+    <span class="c"># -------------------------------------------------------</span>
+    <span class="c"># Input:</span>
+        <span class="c"># accessPoints: Array holding accessPoint dictionaries.</span>
+        <span class="c">#               The order of the arrays supplied will retain</span>
+        <span class="c">#               its order, throughout the entire execution.</span>
+        <span class="c"># [{</span>
+        <span class="c">#     &#39;signalAttenuation&#39;: 3, </span>
+        <span class="c">#     &#39;location&#39;: {</span>
+        <span class="c">#         &#39;y&#39;: 1, </span>
+        <span class="c">#         &#39;x&#39;: 1</span>
+        <span class="c">#     }, </span>
+        <span class="c">#     &#39;reference&#39;: {</span>
+        <span class="c">#         &#39;distance&#39;: 4, </span>
+        <span class="c">#         &#39;signal&#39;: -50</span>
+        <span class="c">#     }, </span>
+        <span class="c">#     &#39;name&#39;: &#39;dd-wrt&#39;</span>
+        <span class="c"># },</span>
+        <span class="c"># {</span>
+        <span class="c">#     &#39;signalAttenuation&#39;: 4, </span>
+        <span class="c">#     &#39;location&#39;: {</span>
+        <span class="c">#         &#39;y&#39;: 1, </span>
+        <span class="c">#         &#39;x&#39;: 7</span>
+        <span class="c">#     }, </span>
+        <span class="c">#     &#39;reference&#39;: {</span>
+        <span class="c">#         &#39;distance&#39;: 3, </span>
+        <span class="c">#         &#39;signal&#39;: -41</span>
+        <span class="c">#     }, </span>
+        <span class="c">#     &#39;name&#39;: &#39;ucrwpa&#39;</span>
+        <span class="c"># }]</span>
+<span class="k">class</span> <span class="nc">RSSI_Localizer</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="c"># Allows us to fetch for networks/accessPoints externally.</span>
+    <span class="c"># Array of access points must be formatted.</span>
+    <span class="c"># &#39;self.count&#39; parameter is computed internally to aid in </span>
+    <span class="c"># scaling of the algorithm.</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">accessPoints</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">accessPoints</span> <span class="o">=</span> <span class="n">accessPoints</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">accessPoints</span><span class="p">)</span>
+
+    <span class="c"># getDistanceFromAP</span>
+        <span class="c"># Description:</span>
+            <span class="c"># Uses the log model to compute an estimated dstance(di) from node(i)</span>
+        <span class="c"># -------------------------------------------------------</span>
+        <span class="c"># Input: </span>
+            <span class="c"># accessPoint: dicitonary holding accesspoint info.</span>
+            <span class="c"># {</span>
+            <span class="c">#     &#39;signalAttenuation&#39;: 3, </span>
+            <span class="c">#     &#39;location&#39;: {</span>
+            <span class="c">#         &#39;y&#39;: 1, </span>
+            <span class="c">#         &#39;x&#39;: 1</span>
+            <span class="c">#     }, </span>
+            <span class="c">#     &#39;reference&#39;: {</span>
+            <span class="c">#         &#39;distance&#39;: 4, </span>
+            <span class="c">#         &#39;signal&#39;: -50</span>
+            <span class="c">#     }, </span>
+            <span class="c">#     &#39;name&#39;: &#39;dd-wrt&#39;</span>
+            <span class="c"># }</span>
+            <span class="c"># signalStrength: -69</span>
+        <span class="c"># -------------------------------------------------------</span>
+        <span class="c"># output: </span>
+            <span class="c"># accessPoint: dicitonary holding accesspoint info.</span>
+            <span class="c"># {</span>
+            <span class="c">#     &#39;signalAttenuation&#39;: 3, </span>
+            <span class="c">#     &#39;location&#39;: {</span>
+            <span class="c">#         &#39;y&#39;: 1, </span>
+            <span class="c">#         &#39;x&#39;: 1</span>
+            <span class="c">#     }, </span>
+            <span class="c">#     &#39;reference&#39;: {</span>
+            <span class="c">#         &#39;distance&#39;: 4, </span>
+            <span class="c">#         &#39;signal&#39;: -50</span>
+            <span class="c">#     }, </span>
+            <span class="c">#     &#39;name&#39;: &#39;dd-wrt&#39;</span>
+            <span class="c"># }</span>
+            <span class="c"># signalStrength: -69,</span>
+            <span class="c"># distance: 2</span>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">getDistanceFromAP</span><span class="p">(</span><span class="n">accessPoint</span><span class="p">,</span> <span class="n">signalStrength</span><span class="p">):</span>
+        <span class="n">beta_numerator</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">accessPoint</span><span class="p">[</span><span class="s">&#39;reference&#39;</span><span class="p">][</span><span class="s">&#39;signal&#39;</span><span class="p">]</span><span class="o">-</span><span class="n">signalStrength</span><span class="p">)</span>
+        <span class="n">beta_denominator</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="mi">10</span><span class="o">*</span><span class="n">accessPoint</span><span class="p">[</span><span class="s">&#39;signalAttenuation&#39;</span><span class="p">])</span>
+        <span class="n">beta</span> <span class="o">=</span> <span class="n">beta_numerator</span><span class="o">/</span><span class="n">beta_denominator</span>
+        <span class="n">distanceFromAP</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(((</span><span class="mi">10</span><span class="o">**</span><span class="n">beta</span><span class="p">)</span><span class="o">*</span><span class="n">accessPoint</span><span class="p">[</span><span class="s">&#39;reference&#39;</span><span class="p">][</span><span class="s">&#39;distance&#39;</span><span class="p">]),</span><span class="mi">4</span><span class="p">)</span>
+        <span class="n">accessPoint</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s">&#39;distance&#39;</span><span class="p">:</span><span class="n">distanceFromAP</span><span class="p">})</span>
+        <span class="k">return</span> <span class="n">accessPoint</span>
+
+    <span class="c"># TODO fix this because theres two consecutive for loops. </span>
+    <span class="c"># One that runs to fefd signal strengths to this function, </span>
+    <span class="c"># a second consecutive loop inside the function.</span>
+
+    <span class="c"># getDistancesForAllAPs</span>
+        <span class="c"># Description:</span>
+            <span class="c"># Makes use of &#39;getDistanceFromAP&#39; to iterate through all </span>
+            <span class="c"># accesspoints being used in localization and obtains the </span>
+            <span class="c"># distance from each one of them.</span>
+        <span class="c"># ------------------------------------------------</span>
+        <span class="c"># Input:</span>
+            <span class="c"># signalStrengths:</span>
+            <span class="c"># [siganl1, siganl2, siganl3]</span>
+            <span class="c"># [-42, -53, -77]</span>
+        <span class="c"># ------------------------------------------------</span>
+        <span class="c"># Output:</span>
+            <span class="c"># [</span>
+            <span class="c">#     {</span>
+            <span class="c">#         &#39;distance&#39;: 4,</span>
+            <span class="c">#         &#39;x&#39;: 2,</span>
+            <span class="c">#         &#39;y&#39;: 3</span>
+            <span class="c">#     },</span>
+            <span class="c">#     {</span>
+            <span class="c">#         &#39;distance&#39;: 7,</span>
+            <span class="c">#         &#39;x&#39;: 2,</span>
+            <span class="c">#         &#39;y&#39;: 5</span>
+            <span class="c">#     },</span>
+            <span class="c">#     {</span>
+            <span class="c">#         &#39;distance&#39;: 9,</span>
+            <span class="c">#         &#39;x&#39;: 7,</span>
+            <span class="c">#         &#39;y&#39;: 3</span>
+            <span class="c">#     }</span>
+            <span class="c"># ]</span>
+    <span class="k">def</span> <span class="nf">getDistancesForAllAPs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">signalStrengths</span><span class="p">):</span>
+        <span class="n">apNodes</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">accessPoints</span><span class="p">)):</span>
+            <span class="n">ap</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">accessPoints</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> 
+            <span class="n">distanceFromAP</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getDistanceFromAP</span><span class="p">(</span>
+                <span class="n">ap</span><span class="p">,</span>
+                <span class="n">signalStrengths</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="p">)</span>
+            <span class="n">apNodes</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                <span class="s">&#39;distance&#39;</span><span class="p">:</span> <span class="n">distanceFromAP</span><span class="p">[</span><span class="s">&#39;distance&#39;</span><span class="p">],</span>
+                <span class="s">&#39;x&#39;</span><span class="p">:</span> <span class="n">ap</span><span class="p">[</span><span class="s">&#39;location&#39;</span><span class="p">][</span><span class="s">&#39;x&#39;</span><span class="p">],</span>
+                <span class="s">&#39;y&#39;</span><span class="p">:</span> <span class="n">ap</span><span class="p">[</span><span class="s">&#39;location&#39;</span><span class="p">][</span><span class="s">&#39;y&#39;</span><span class="p">]</span>
+            <span class="p">})</span>
+        <span class="k">return</span> <span class="n">apNodes</span>
+
+    <span class="c"># createMatrices</span>
+        <span class="c"># Description:</span>
+            <span class="c"># Creates tehmatrices neccesary to use the least squares method</span>
+            <span class="c"># in order to mnimize the error (error=|realDistance-estimatedDistance|). </span>
+            <span class="c"># Assuming &#39;n&#39; number of nodes and d(m) is the distance(d) from node (m).</span>
+            <span class="c"># AX = B, where X is our estimated location.</span>
+            <span class="c"># A = [</span>
+            <span class="c">#     2(x(i)-xn)    2(y(i)-yn)</span>
+            <span class="c">#     2(x(i+1)-xn)  2(y(i+1)-yn)</span>
+            <span class="c">#     ...           ...</span>
+            <span class="c">#     2(x(n-1)-xn)  2(y(n-1)-yn)</span>
+            <span class="c"># ]</span>
+            <span class="c"># B = [</span>
+            <span class="c">#     x(i)^2 + y(i)^2 - x(n)^2 + y(n)^2 - d(i)^2 + d(n)^2</span>
+            <span class="c">#     x(i+1)^2 + y(i+1)^2 - x(n)^2 + y(n)^2 - d(i+1)^2 + d(n)^2</span>
+            <span class="c">#     ...</span>
+            <span class="c">#     x(n-1)^2 + y(n-1)^2 - x(n)^2 + y(n)^2 - d(n-1)^2 + d(n)^2</span>
+            <span class="c"># ]</span>
+        <span class="c"># ----------------------------------------</span>
+        <span class="c"># Input:</span>
+            <span class="c"># accessPoints</span>
+            <span class="c"># [</span>
+            <span class="c">#     {</span>
+            <span class="c">#         &#39;distance&#39;: 4,</span>
+            <span class="c">#         &#39;x&#39;: 2,</span>
+            <span class="c">#         &#39;y&#39;: 3</span>
+            <span class="c">#     },</span>
+            <span class="c">#     {</span>
+            <span class="c">#         &#39;distance&#39;: 7,</span>
+            <span class="c">#         &#39;x&#39;: 2,</span>
+            <span class="c">#         &#39;y&#39;: 5</span>
+            <span class="c">#     },</span>
+            <span class="c">#     {</span>
+            <span class="c">#         &#39;distance&#39;: 9,</span>
+            <span class="c">#         &#39;x&#39;: 7,</span>
+            <span class="c">#         &#39;y&#39;: 3</span>
+            <span class="c">#     }</span>
+            <span class="c"># ]</span>
+        <span class="c"># ----------------------------------------</span>
+        <span class="c"># Output:</span>
+            <span class="c"># A = [</span>
+            <span class="c">#     2(2-7)    2(3-3)</span>
+            <span class="c">#     2(2-7)  2(5-3)</span>
+            <span class="c"># ]</span>
+            <span class="c"># B = [</span>
+            <span class="c">#     2^2 + 3^2 - 7^2 + 3^2 - 4^2 + 9^2</span>
+            <span class="c">#     2^2 + 5^2 - 7^2 + 3^2 - 7^2 + 9^2</span>
+            <span class="c"># ]</span>
+    <span class="k">def</span> <span class="nf">createMatrices</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">accessPoints</span><span class="p">):</span>
+        <span class="c"># Sets up that te matrics only go as far as &#39;n-1&#39; rows,</span>
+        <span class="c"># with &#39;n being the # of access points being used.</span>
+        <span class="n">n_count</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">count</span><span class="o">-</span><span class="mi">1</span>
+        <span class="c"># initialize &#39;A&#39; matrix with &#39;n-1&#39; ranodm rows.</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">n_count</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+        <span class="c"># initialize &#39;B&#39; matrix with &#39;n-1&#39; ranodm rows.</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">n_count</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+        <span class="c"># Define &#39;x(n)&#39; (x of last accesspoint)</span>
+        <span class="n">x_n</span> <span class="o">=</span> <span class="n">accessPoints</span><span class="p">[</span><span class="n">n_count</span><span class="p">][</span><span class="s">&#39;x&#39;</span><span class="p">]</span> 
+        <span class="c"># Define &#39;y(n)&#39; (y of last accesspoint)</span>
+        <span class="n">y_n</span> <span class="o">=</span> <span class="n">accessPoints</span><span class="p">[</span><span class="n">n_count</span><span class="p">][</span><span class="s">&#39;y&#39;</span><span class="p">]</span>
+        <span class="c"># Define &#39;d(n)&#39; (distance from of last accesspoint)</span>
+        <span class="n">d_n</span> <span class="o">=</span> <span class="n">accessPoints</span><span class="p">[</span><span class="n">n_count</span><span class="p">][</span><span class="s">&#39;distance&#39;</span><span class="p">]</span>
+        <span class="c"># Iteration through accesspoints is done upto &#39;n-1&#39; only</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_count</span><span class="p">):</span>
+            <span class="n">ap</span> <span class="o">=</span> <span class="n">accessPoints</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="n">ap</span><span class="p">[</span><span class="s">&#39;x&#39;</span><span class="p">],</span> <span class="n">ap</span><span class="p">[</span><span class="s">&#39;y&#39;</span><span class="p">],</span> <span class="n">ap</span><span class="p">[</span><span class="s">&#39;distance&#39;</span><span class="p">]</span>
+            <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">x_n</span><span class="p">),</span> <span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">y_n</span><span class="p">)]</span>
+            <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">[(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">x_n</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">y_n</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">d</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">d_n</span><span class="o">**</span><span class="mi">2</span><span class="p">)]</span>
+        <span class="k">return</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span>
+
+    <span class="c"># computePosition</span>
+        <span class="c"># Description:</span>
+            <span class="c"># Performs the &#39;least squares method&#39; matrix operations </span>
+            <span class="c"># neccessary to get the &#39;x&#39; and &#39;y&#39; of the unknown </span>
+            <span class="c"># beacon&#39;s position.</span>
+            <span class="c"># X = [(A_transposed*A)^-1]*[A_transposed*B]</span>
+        <span class="c"># ----------------------------------------</span>
+        <span class="c"># Input:</span>
+            <span class="c"># A = [</span>
+            <span class="c">#     0   0</span>
+            <span class="c">#     0  -4</span>
+            <span class="c"># ]</span>
+            <span class="c"># B = [</span>
+            <span class="c">#     4 + 9 - 49 + 9 - 16 + 81  =&gt; 38</span>
+            <span class="c">#     4 + 25 - 49 + 9 - 49 + 81 =&gt; 21</span>
+            <span class="c"># ]</span>
+        <span class="c"># ----------------------------------------</span>
+        <span class="c"># Output:</span>
+            <span class="c"># x</span>
+            <span class="c"># [</span>
+            <span class="c">#     2,</span>
+            <span class="c">#     3</span>
+            <span class="c"># ]</span>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">computePosition</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+        <span class="c"># Get &#39;A_transposed&#39; matrix</span>
+        <span class="n">at</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+        <span class="c"># Get &#39;A_transposed*A&#39; matrix</span>
+        <span class="n">at_a</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">at</span><span class="p">,</span><span class="n">a</span><span class="p">)</span>
+        <span class="c"># Get &#39;[(A_transposed*A)^-1]&#39; matrix</span>
+        <span class="n">inv_at_a</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">at_a</span><span class="p">)</span>
+        <span class="c"># Get &#39;[A_transposed*B]&#39;</span>
+        <span class="n">at_b</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">at</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+        <span class="c"># Get &#39;[(A_transposed*A)^-1]*[A_transposed*B]&#39;</span>
+        <span class="c"># This holds our position (xn,yn)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">inv_at_a</span><span class="p">,</span><span class="n">at_b</span><span class="p">)</span> 
+        <span class="k">return</span> <span class="n">x</span>
+
+    <span class="c"># getNodePosition</span>
+        <span class="c"># Description:</span>
+            <span class="c"># Combines &#39;getDistancesForAllAPs&#39;, &#39;createMatrics&#39;,</span>
+            <span class="c"># and &#39;computerPosition&#39; to get the &#39;X&#39; vector that</span>
+            <span class="c"># contains our unkown (x,y) position.</span>
+        <span class="c"># ----------------------------------------</span>
+        <span class="c"># Input:</span>
+            <span class="c"># signalStrengths</span>
+            <span class="c"># [4, 2 , 3]</span>
+        <span class="c"># ----------------------------------------</span>
+        <span class="c"># Output:</span>
+            <span class="c"># x</span>
+            <span class="c"># [2, 3]</span>
+    <span class="k">def</span> <span class="nf">getNodePosition</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">signalStrengths</span><span class="p">):</span>
+        <span class="n">apNodes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getDistancesForAllAPs</span><span class="p">(</span><span class="n">signalStrengths</span><span class="p">)</span>
+        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">createMatrices</span><span class="p">(</span><span class="n">apNodes</span><span class="p">)</span> 
+        <span class="n">position</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">computePosition</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+        <span class="c"># print(a)</span>
+        <span class="c"># print(b)</span>
+        <span class="k">return</span> <span class="n">position</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="ros-wrapper">ROS Wrapper</h2>
+<h3 id="rssi-node">RSSI Node</h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154</pre></div></td><td class="code"><div class="codehilite"><pre><span class="c">#!/usr/bin/env python</span>
+<span class="kn">import</span> <span class="nn">rospy</span> <span class="c">#import ROS pip package for using ROS library</span>
+<span class="kn">from</span> <span class="nn">omnibot.msg</span> <span class="kn">import</span> <span class="n">MotorArray</span> <span class="c"># import our custom ROS msg types</span>
+<span class="kn">from</span> <span class="nn">rssi</span> <span class="kn">import</span> <span class="n">RSSI_Scan</span> <span class="c">#Imports the RSSI_scan class from the sibling rssi file</span>
+<span class="kn">from</span> <span class="nn">rssi</span> <span class="kn">import</span> <span class="n">RSSI_Localizer</span>
+
+<span class="c"># getNetworks:</span>
+    <span class="c"># Description:</span>
+        <span class="c"># Parses the &#39;accessPoints&#39; portion of the rosparams</span>
+        <span class="c"># dictionary, and returns a list of network dictioanries,</span>
+        <span class="c"># in order. Order specified in yaml params file and.</span>
+        <span class="c"># remains persistent.</span>
+    <span class="c"># --------------------------------------------------</span>
+    <span class="c"># Input:</span>
+        <span class="c"># {</span>
+        <span class="c">#     &#39;ap1&#39;: {</span>
+        <span class="c">#         &#39;signalAttenuation&#39;: 3, </span>
+        <span class="c">#         &#39;location&#39;: {</span>
+        <span class="c">#             &#39;y&#39;: 7, </span>
+        <span class="c">#             &#39;x&#39;: 1</span>
+        <span class="c">#         }, </span>
+        <span class="c">#         &#39;reference&#39;: {</span>
+        <span class="c">#             &#39;distance&#39;: 5, </span>
+        <span class="c">#             &#39;signal&#39;: 60</span>
+        <span class="c">#         }, </span>
+        <span class="c">#         &#39;name&#39;: </span>
+        <span class="c">#         &#39;dd-wrt&#39;</span>
+        <span class="c">#     }, </span>
+        <span class="c">#     &#39;ap2&#39;: {</span>
+        <span class="c">#         &#39;name&#39;: &#39;OnePlus3&#39;, </span>
+        <span class="c">#         &#39;location&#39;: {</span>
+        <span class="c">#             &#39;y&#39;: 11, </span>
+        <span class="c">#             &#39;x&#39;: 3</span>
+        <span class="c">#         },</span>
+        <span class="c">#         &#39;reference&#39;: {</span>
+        <span class="c">#             &#39;distance&#39;: 4, </span>
+        <span class="c">#             &#39;signal&#39;: 40</span>
+        <span class="c">#         }, </span>
+        <span class="c">#         &#39;signalAttenuation&#39;: 3</span>
+        <span class="c">#     },</span>
+        <span class="c"># }</span>
+    <span class="c"># ------------------------------------------------</span>
+    <span class="c"># Returns: (networkNames,accessPoints)</span>
+        <span class="c"># networkNames =&gt; [</span>
+        <span class="c">#   &#39;dd-wrt&#39;,</span>
+        <span class="c">#   &#39;OnePlus3&#39;</span>
+        <span class="c"># ]</span>
+        <span class="c"># accessPoints =&gt; Ordered list of dictionaries.</span>
+        <span class="c"># [</span>
+        <span class="c">#     {</span>
+        <span class="c">#         &#39;signalAttenuation&#39;: 3, </span>
+        <span class="c">#         &#39;location&#39;: {</span>
+        <span class="c">#             &#39;y&#39;: 7, </span>
+        <span class="c">#             &#39;x&#39;: 1</span>
+        <span class="c">#         }, </span>
+        <span class="c">#         &#39;reference&#39;: {</span>
+        <span class="c">#             &#39;distance&#39;: 5, </span>
+        <span class="c">#             &#39;signal&#39;: 60</span>
+        <span class="c">#         }, </span>
+        <span class="c">#         &#39;name&#39;: &#39;dd-wrt&#39;</span>
+        <span class="c">#     }, </span>
+        <span class="c">#     {</span>
+        <span class="c">#         &#39;name&#39;: &#39;OnePlus3&#39;, </span>
+        <span class="c">#         &#39;location&#39;: {</span>
+        <span class="c">#             &#39;y&#39;: 11, </span>
+        <span class="c">#             &#39;x&#39;: 3</span>
+        <span class="c">#         },</span>
+        <span class="c">#         &#39;reference&#39;: {</span>
+        <span class="c">#             &#39;distance&#39;: 4, </span>
+        <span class="c">#             &#39;signal&#39;: 40</span>
+        <span class="c">#         }, </span>
+        <span class="c">#         &#39;signalAttenuation&#39;: 3</span>
+        <span class="c">#     }</span>
+        <span class="c"># ]</span>
+<span class="k">def</span> <span class="nf">getNetworks</span><span class="p">(</span><span class="n">accessPointDict</span><span class="p">):</span>
+    <span class="n">accessPointKeys</span> <span class="o">=</span> <span class="n">accessPointDict</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+    <span class="n">accessPointKeys</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+    <span class="n">networkNames</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">accessPoints</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">accessPointKeys</span><span class="p">:</span>
+        <span class="n">accessPoints</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">accessPointDict</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+        <span class="n">networkNames</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">accessPointDict</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="s">&#39;name&#39;</span><span class="p">])</span>
+
+    <span class="k">return</span> <span class="n">networkNames</span><span class="p">,</span><span class="n">accessPoints</span>
+
+<span class="k">def</span> <span class="nf">rssiPublisher</span><span class="p">():</span>
+    <span class="c"># Single call to the parameter server</span>
+    <span class="n">rosParams</span> <span class="o">=</span> <span class="n">rospy</span><span class="o">.</span><span class="n">get_param</span><span class="p">(</span><span class="s">&#39;rssi&#39;</span><span class="p">)</span>
+        <span class="c"># {</span>
+        <span class="c">#     &#39;accessPoints&#39;: {</span>
+        <span class="c">#         &#39;ap1&#39;: {</span>
+        <span class="c">#             &#39;signalAttenuation&#39;: 3, </span>
+        <span class="c">#             &#39;location&#39;: {</span>
+        <span class="c">#                 &#39;y&#39;: 7, </span>
+        <span class="c">#                 &#39;x&#39;: 1</span>
+        <span class="c">#             }, </span>
+        <span class="c">#             &#39;reference&#39;: {</span>
+        <span class="c">#                 &#39;distance&#39;: 5, </span>
+        <span class="c">#                 &#39;signal&#39;: 60</span>
+        <span class="c">#             }, </span>
+        <span class="c">#             &#39;name&#39;: </span>
+        <span class="c">#             &#39;dd-wrt&#39;</span>
+        <span class="c">#         }, </span>
+        <span class="c">#         &#39;ap2&#39;: {</span>
+        <span class="c">#             &#39;name&#39;: &#39;OnePlus3&#39;, </span>
+        <span class="c">#             &#39;location&#39;: {</span>
+        <span class="c">#                 &#39;y&#39;: 11, </span>
+        <span class="c">#                 &#39;x&#39;: 3</span>
+        <span class="c">#             },</span>
+        <span class="c">#             &#39;reference&#39;: {</span>
+        <span class="c">#                 &#39;distance&#39;: 4, </span>
+        <span class="c">#                 &#39;signal&#39;: 40</span>
+        <span class="c">#             }, </span>
+        <span class="c">#             &#39;signalAttenuation&#39;: 3</span>
+        <span class="c">#         },</span>
+        <span class="c">#     }</span>
+        <span class="c">#     &#39;networkInterface&#39;: &#39;wlp1s0&#39;</span>
+        <span class="c"># }</span>
+
+    <span class="n">pub</span> <span class="o">=</span> <span class="n">rospy</span><span class="o">.</span><span class="n">Publisher</span><span class="p">(</span><span class="s">&#39;rssiLocalization_topic&#39;</span><span class="p">,</span> <span class="n">MotorArray</span><span class="p">,</span> <span class="n">queue_size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="c"># Get parameters from our ROS server</span>
+    <span class="n">networkInterface</span> <span class="o">=</span> <span class="n">rosParams</span><span class="p">[</span><span class="s">&#39;networkInterface&#39;</span><span class="p">]</span>
+    <span class="n">ssids</span><span class="p">,</span><span class="n">networks</span> <span class="o">=</span> <span class="n">getNetworks</span><span class="p">(</span><span class="n">rosParams</span><span class="p">[</span><span class="s">&#39;accessPoints&#39;</span><span class="p">])</span>
+    <span class="c"># Initialize node</span>
+    <span class="n">rospy</span><span class="o">.</span><span class="n">init_node</span><span class="p">(</span><span class="s">&#39;rssiPublisher_node&#39;</span><span class="p">)</span>
+    <span class="c"># Create instance of RSSI module.</span>
+    <span class="c"># This makes our &#39;getAccessPoints&#39; function available to us.</span>
+    <span class="n">rssi</span> <span class="o">=</span> <span class="n">RSSI_Scan</span><span class="p">(</span><span class="n">networkInterface</span><span class="p">)</span>
+    <span class="n">localizer</span> <span class="o">=</span> <span class="n">RSSI_Localizer</span><span class="p">(</span><span class="n">networks</span><span class="p">)</span>
+    <span class="c"># This keeps the node running until the script is shut down manually.</span>
+    <span class="c"># node will keep cycling at the frequncy set above.</span>
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">rospy</span><span class="o">.</span><span class="n">is_shutdown</span><span class="p">():</span> 
+        <span class="c"># Returns an array of all access-points of interest (if they are in range).</span>
+        <span class="c"># Process takes about 1.5-4 seconds to finish.</span>
+        <span class="n">ap_info</span> <span class="o">=</span> <span class="n">rssi</span><span class="o">.</span><span class="n">getAPinfo</span><span class="p">(</span><span class="n">networks</span><span class="o">=</span><span class="n">ssids</span><span class="p">,</span> <span class="n">sudo</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="c"># rospy.loginfo(ap_info)</span>
+        <span class="n">rssi_values</span> <span class="o">=</span> <span class="p">[</span><span class="n">ap</span><span class="p">[</span><span class="s">&#39;signal&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">ap</span> <span class="ow">in</span> <span class="n">ap_info</span><span class="p">]</span>
+        <span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span><span class="n">rssi_values</span><span class="p">)</span>
+        <span class="n">distances</span> <span class="o">=</span> <span class="n">localizer</span><span class="o">.</span><span class="n">getDistancesForAllAPs</span><span class="p">(</span><span class="n">rssi_values</span><span class="p">)</span>
+        <span class="n">distances</span> <span class="o">=</span> <span class="p">[</span><span class="n">distance</span><span class="p">[</span><span class="s">&#39;distance&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">distance</span> <span class="ow">in</span> <span class="n">distances</span><span class="p">]</span>
+        <span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span><span class="n">distances</span><span class="p">)</span>
+        <span class="n">position</span> <span class="o">=</span> <span class="n">localizer</span><span class="o">.</span><span class="n">getNodePosition</span><span class="p">(</span><span class="n">rssi_values</span><span class="p">)</span>
+        <span class="c"># if len(ap_info)&lt;2:</span>
+        <span class="c">#     continue</span>
+        <span class="c"># rospy.loginfo(rssi_values)</span>
+        <span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span><span class="n">position</span><span class="p">)</span>
+
+        <span class="c"># pub.publish(aps[0][&#39;signal&#39;],aps[1][&#39;signal&#39;],0)</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">rssiPublisher</span><span class="p">()</span>
+    <span class="k">except</span> <span class="n">rospy</span><span class="o">.</span><span class="n">ROSInterruptException</span><span class="p">:</span>
+        <span class="k">pass</span>
+</pre></div>
+</td></tr></table>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../serialLatency/" title="Serial Latency" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Serial Latency
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../projectSlackChannel/" title="Project Slack Channel" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Project Slack Channel
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2018 PasqLab
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.a59e2a89.js"></script>
+      
+      <script>app.initialize({version:"0.17.5",url:{base:".."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>

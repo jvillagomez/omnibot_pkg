@@ -1,0 +1,32 @@
+rssi:
+  networkInterface: wlp1s0
+  accessPoints:
+    ap1: 
+      name: rosNoInternet
+      location:
+        x: 1
+        y: 1
+      reference:
+        distance: 7
+        signal: -50
+      signalAttenuation: 3
+
+    ap2: 
+      name: dd-wrt
+      location:
+        x: 1
+        y: 7
+      reference:
+        distance: 5
+        signal: -60
+      signalAttenuation: 3
+
+    ap3: 
+      name: OnePlus3
+      location:
+        x: 3
+        y: 11
+      reference:
+        distance: 4
+        signal: -40
+      signalAttenuation: 3

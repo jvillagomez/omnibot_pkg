@@ -1,0 +1,6 @@
+<launch>
+   <!-- Start Ultrasound Node -->
+  <node name="ultrasoundPublisher_node" pkg="omnibot" type="ultrasoundPublisher_node.py" />
+   <!-- Start ROSserial node -->
+  <node name="arduino_node" pkg="omnibot" type="start_rosserial.sh" />
+</launch>

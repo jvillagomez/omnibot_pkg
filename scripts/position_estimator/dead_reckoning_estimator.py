@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import rospy
 from geometry_msgs.msg import Pose
-from geometry_msgs.msg import Vector3
+from omnibot.msg import MotorArray
 import numpy as np
 import tf
 from math import cos, sin
@@ -25,7 +25,7 @@ class estimator():
         pub.publish(estimate_state)
 
         rospy.Subscriber("state_estimate", Pose, a.callback_estimator)
-        rospy.Subscriber("motor_angular_displacement", Vector3, a.callback_motorstep)
+        rospy.Subscriber("motor_angular_displacement", MotorArray, a.callback_motorstep)
         rate = rospy.Rate(10)
 
         while not rospy.is_shutdown():
@@ -38,7 +38,7 @@ class estimator():
     def callback_motorstep(self,msg):
         global estimate_state
         estimate_state = Pose()
-        D=np.matrix([[msg.x],[msg.y],[msg.z]])  # the motor's angular displacements
+        D=np.matrix([[msg.motor1],[msg.motor2],[msg.motor3]])  # the motor's angular displacements
         k1=[[-1.0/3,2.0/3,-1.0/3],
             [-np.sqrt(3)/3,0,np.sqrt(3)/3],
             [1.0/(3*l),1.0/(3*l),1.0/(3*l)]]

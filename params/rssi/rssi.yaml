@@ -1,5 +1,5 @@
 rssi:
-  networkInterface: wlp1s0
+  networkInterface: wlan0
   accessPoints:
     ap1: 
       name: rosNoInternet

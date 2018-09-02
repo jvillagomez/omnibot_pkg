@@ -1,0 +1,19 @@
+<launch>
+   <!-- Battery Level -->
+  <node name="pico_battery_level" pkg="omnibot" type="pico_battery_level_node.py" />
+  
+  <!-- Pico Board Temperature -->
+  <node name="pico_board_temp" pkg="omnibot" type="pico_board_temp_node.py" />
+  
+  <!-- Charge Port Status -->
+  <node name="pico_charge_mode" pkg="omnibot" type="pico_charge_mode_node.py" />
+  
+  <!-- External Power Voltage -->
+  <node name="pico_ext_voltage_level" pkg="omnibot" type="pico_ext_voltage_level_node.py" />
+  
+  <!-- Watch Pico A-B-C Keys -->
+  <node name="pico_key_watcher" pkg="omnibot" type="pico_key_watcher_node.py" />
+  
+  <!-- Pico Power Mode -->
+  <node name="pico_power_mode" pkg="omnibot" type="pico_power_mode_node.py" />
+</launch>

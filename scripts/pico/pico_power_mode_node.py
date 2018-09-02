@@ -5,8 +5,8 @@ from std_msgs.msg import String
 from subprocess import Popen, PIPE
 
 def publisher():
-    pub = rospy.Publisher('Power_mode_topic', String, queue_size=10)
-    rospy.init_node('PicoPower_Mode')
+    pub = rospy.Publisher('pico_power_mode_topic', String, queue_size=10)
+    rospy.init_node('pico_power_mode_node')
     rate = rospy.Rate(1) 
     while not rospy.is_shutdown():
         process = Popen(['sudo', 'i2cget', '-y', '1', '0x69', '0x00', 'b'], stdout=PIPE, stderr=PIPE)

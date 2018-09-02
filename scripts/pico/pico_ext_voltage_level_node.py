@@ -5,8 +5,8 @@ from std_msgs.msg import String
 from subprocess import Popen, PIPE
 
 def publisher():
-    pub = rospy.Publisher('external_voltage_topic', String, queue_size=10)
-    rospy.init_node('external_voltage')
+    pub = rospy.Publisher('pico_ext_voltage_level_topic', String, queue_size=10)
+    rospy.init_node('pico_ext_voltage_level_node')
     rate = rospy.Rate(5) 
 
     while not rospy.is_shutdown():

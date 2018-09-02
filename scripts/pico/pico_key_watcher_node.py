@@ -19,14 +19,14 @@ def toggleLight(color):
     return
 
 def publisher():
-    pub = rospy.Publisher('KeyPress_topic', String, queue_size=5)
-    rospy.init_node('key_press_watch')
+    pub = rospy.Publisher('pico_key_watcher_topic', String, queue_size=5)
+    rospy.init_node('pico_key_watcher_node')
     rate = rospy.Rate(5) 
     while not rospy.is_shutdown():
         process = Popen(['sudo', 'i2cget', '-y', '1', '0x69', '0x1a', 'b'], stdout=PIPE, stderr=PIPE)
         stdout, stderr = process.communicate()
         process.wait()
-        rospy.loginfo(stdout)
+        # rospy.loginfo(stdout)
         
         if '0x00' in stdout:
             continue

@@ -13,10 +13,10 @@ def publisher():
         stdout, stderr = process.communicate()
         process.wait()
 
-        temp = stdout.replace('0x','')
-        board_temp = "Board Temp: %s" % temp
-        rospy.loginfo(board_temp)
-        pub.publish(board_temp)
+        temp = stdout.replace('0x','').replace("\n",'')
+        # temp = "Board Temp: %s" % temp
+        # rospy.loginfo(temp)
+        pub.publish(temp)
         rate.sleep()
 
 if __name__ == '__main__':

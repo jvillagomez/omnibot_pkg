@@ -17,9 +17,9 @@ def publisher():
         rospy.loginfo(powerMode_hex)
         mode = 'Bat' if '02' in powerMode_hex else 'Charger'
         
-        power_mode = "Power Mode : %s" % mode
-        rospy.loginfo(power_mode)
-        pub.publish(power_mode)
+        # mode = "Power Mode : %s" % mode
+        # rospy.loginfo(mode)
+        pub.publish(mode)
         rate.sleep()
 
 if __name__ == '__main__':

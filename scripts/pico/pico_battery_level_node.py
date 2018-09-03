@@ -13,10 +13,9 @@ def publisher():
         stdout, stderr = process.communicate()
         process.wait()
 
-        battery_chg = stdout.replace('0x','')
-        bat_level = "Bat Level: %s" % battery_chg
-        rospy.loginfo(bat_level)
-        pub.publish(bat_level)
+        battery_chg = stdout.replace('0x','').replace("\n",'')
+        # battery_chg = "Bat Level: %s" % battery_chg
+        pub.publish(battery_chg)
         rate.sleep()
 
 if __name__ == '__main__':

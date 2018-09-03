@@ -17,9 +17,9 @@ def publisher():
         mode = 'Open' if '01' in chgMode_hex else 'Closed'
         
         
-        power_mode = "Charge IC : %s" % mode
-        rospy.loginfo(power_mode)
-        pub.publish(power_mode)
+        # mode = "Charge IC : %s" % mode
+        # rospy.loginfo(mode)
+        pub.publish(mode)
         rate.sleep()
 
 if __name__ == '__main__':

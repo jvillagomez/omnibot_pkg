@@ -15,9 +15,9 @@ def publisher():
         process.wait()
 
         ext_volt = stdout.replace('0x','')
-        voltage = "Ext Volt Level: %s" % ext_volt
-        rospy.loginfo(voltage)
-        pub.publish(voltage)
+        # ext_volt = "Ext Volt Level: %s" % ext_volt
+        # rospy.loginfo(ext_volt)
+        pub.publish(ext_volt)
         rate.sleep()
 
 if __name__ == '__main__':

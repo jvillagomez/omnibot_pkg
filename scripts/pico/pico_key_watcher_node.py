@@ -42,9 +42,9 @@ def publisher():
 
         process = Popen(['sudo', 'i2cset', '-y', '1', '0x69', '0x1a', '0x00'])
         process.wait()
-        message = "Perform: %s" % action
-        rospy.loginfo(message)
-        pub.publish(message)
+        # action = "Perform: %s" % action
+        # rospy.loginfo(action)
+        pub.publish(action)
         rate.sleep()
 
 if __name__ == '__main__':

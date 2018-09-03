@@ -22,7 +22,7 @@ rssi:
       signalAttenuation: 3
 
     ap3: 
-      name: OnePlus3
+      name: beacon_2
       location:
         x: 3
         y: 11

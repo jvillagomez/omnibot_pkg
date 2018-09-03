@@ -33,5 +33,5 @@
       'networkInterface': 'wlp1s0'
   } -->
   <!--  Start rssiPublisher Node-->
-  <!-- <node name="rssiPublisher_node" pkg="omnibot" type="rssiPublisher_node.py" /> -->
+  <node name="rssiPublisher_node" pkg="omnibot" type="rssiPublisher_node.py" />
 </launch>

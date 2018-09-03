@@ -1,7 +1,7 @@
 <launch>
-   <!-- Battery Level -->
-  <node name="pico_battery_level" pkg="omnibot" type="pico_battery_level_node.py" />
-  
+  <!-- Pico Battery Level -->
+  <node name="pico_battery_level" pkg="omnibot" type="pico_battery_level_node.py" />	
+
   <!-- Pico Board Temperature -->
   <node name="pico_board_temp" pkg="omnibot" type="pico_board_temp_node.py" />
   

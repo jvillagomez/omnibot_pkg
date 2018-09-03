@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import rospy #import ROS pip package for using ROS library
-from omnibot.msg import MotorArray # import our custom ROS msg types
+from geometry_msgs.msg import Point # import our custom ROS msg types
 from rssi import RSSI_Scan #Imports the RSSI_scan class from the sibling rssi file
 from rssi import RSSI_Localizer
 
@@ -117,7 +117,7 @@ def rssiPublisher():
         #     'networkInterface': 'wlp1s0'
         # }
 
-    pub = rospy.Publisher('rssiLocalization_topic', MotorArray, queue_size=10)
+    pub = rospy.Publisher('rssiLocalization_topic', Point, queue_size=10)
     # Get parameters from our ROS server
     networkInterface = rosParams['networkInterface']
     ssids,networks = getNetworks(rosParams['accessPoints'])
@@ -135,24 +135,19 @@ def rssiPublisher():
         ap_info = rssi.getAPinfo(networks=ssids, sudo=True)
         if not ap_info:
             rospy.loginfo('Nodes not found')
+            pub.publish(-1,-1,-1)
             continue
-        rospy.loginfo(ap_info)
+        
         rssi_values = [ap['signal'] for ap in ap_info]
-        rospy.loginfo("rssi_values")
-        rospy.loginfo(rssi_values)
+        
         distances = localizer.getDistancesForAllAPs(rssi_values)
         distances = [distance['distance'] for distance in distances]
-        rospy.loginfo("distances")
-        rospy.loginfo(distances)
+        
         position = localizer.getNodePosition(rssi_values)
-        # if len(ap_info)<2:
-        #     print("fuck you")
-        #     continue
-        # rospy.loginfo(rssi_values)
-        rospy.loginfo("position")
+        for ap in ap_info:
+            rospy.loginfo(ap)
         rospy.loginfo(position)
-
-        # pub.publish(aps[0]['signal'],aps[1]['signal'],0)
+        pub.publish(position[0],position[1],0)
             
 if __name__ == '__main__':
     try:

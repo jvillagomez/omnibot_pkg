@@ -133,6 +133,9 @@ def rssiPublisher():
         # Returns an array of all access-points of interest (if they are in range).
         # Process takes about 1.5-4 seconds to finish.
         ap_info = rssi.getAPinfo(networks=ssids, sudo=True)
+        if not ap_info:
+            rospy.loginfo('Nodes not found')
+            continue
         rospy.loginfo(ap_info)
         rssi_values = [ap['signal'] for ap in ap_info]
         rospy.loginfo("rssi_values")

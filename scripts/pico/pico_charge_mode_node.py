@@ -27,7 +27,3 @@ if __name__ == '__main__':
         publisher()
     except rospy.ROSInterruptException:
         pass
-
-
-
-print stdout

@@ -32,7 +32,7 @@ def notify_of_fssd():
     return
 
 def update_voltage(data):
-    voltage = int(data)
+    voltage = int(data.data)
 
 def update_power_mode(data):
     power_mode = data

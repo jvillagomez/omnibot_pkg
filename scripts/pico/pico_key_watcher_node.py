@@ -6,6 +6,12 @@ from subprocess import Popen, PIPE
 
 orange, green, blue = '0x09','0x0a','0x0b'
 
+def kill_ros():
+    os.system("killall roslaunch")
+    os.system("rosnode kill -a")
+    os.system("killall roscore")
+    return 0
+
 def toggleLight(color):
     process = Popen(['sudo', 'i2cget', '-y', '1', '0x6b', color, 'b'], stdout=PIPE, stderr=PIPE)
     stdout, stderr = process.communicate()
@@ -31,8 +37,9 @@ def publisher():
         if '0x00' in stdout:
             continue
         elif '0x01' in stdout:
-            action = 'action-A' # Do action A
-            toggleLight(orange)            
+            action = 'kill_ros' # Do action A
+            kill_ros()
+            # toggleLight(orange)            
         elif '0x02' in stdout:
             action = 'action-B' # Do action B
             toggleLight(green)            

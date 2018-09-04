@@ -1,6 +1,62 @@
 <launch>
-   <!-- Start Ultrasound Node -->
-  <node name="ultrasoundPublisher_node" pkg="omnibot" type="ultrasoundPublisher_node.py" />
-   <!-- Start ROSserial node -->
-  <node name="arduino_node" pkg="omnibot" type="start_rosserial.sh" />
+  <!-- RSSI LAUNCH -->
+  <!-- ========================== -->
+  <!-- Load RSSI Params from params/rssi.yaml -->
+  <rosparam command="load" file="$(find omnibot)params/rssi/rssi.yaml" />
+  <!-- Parameter Model -->
+  <!-- 'rssi': {
+      'accessPoints': {
+          'ap1': {
+              'signalAttenuation': 3, 
+              'location': {
+                  'y': 7, 
+                  'x': 1
+              }, 
+              'reference': {
+                  'distance': 5, 
+                  'signal': 60
+              }, 
+              'name': 
+              'dd-wrt'
+          }, 
+          'ap2': {
+              'name': 'OnePlus3', 
+              'location': {
+                  'y': 11, 
+                  'x': 3
+              },
+              'reference': {
+                  'distance': 4, 
+                  'signal': 40
+              }, 
+              'signalAttenuation': 3
+          },
+      }
+      'networkInterface': 'wlp1s0'
+  } -->
+  <!--  Start rssiPublisher Node-->
+  <node name="rssiPublisher_node" pkg="omnibot" type="rssiPublisher_node.py" />
+  <!-- ========================== -->
+  <!-- PICO LAUNCH -->
+  <!-- ========================== -->
+  <!-- Pico Battery Level -->
+  <node name="pico_battery_level" pkg="omnibot" type="pico_battery_level_node.py" />	
+
+  <!-- Pico Board Temperature -->
+  <node name="pico_board_temp" pkg="omnibot" type="pico_board_temp_node.py" />
+  
+  <!-- Charge Port Status -->
+  <node name="pico_charge_mode" pkg="omnibot" type="pico_charge_mode_node.py" />
+  
+  <!-- External Power Voltage -->
+  <node name="pico_ext_voltage_level" pkg="omnibot" type="pico_ext_voltage_level_node.py" />
+  
+  <!-- Watch Pico A-B-C Keys -->
+  <node name="pico_key_watcher" pkg="omnibot" type="pico_key_watcher_node.py" />
+  
+  <!-- Pico Power Mode -->
+  <node name="pico_power_mode" pkg="omnibot" type="pico_power_mode_node.py" />
+  <!-- ========================== -->
+  <!-- CAMERA LAUNCH -->
+  <!-- ========================== -->
 </launch>

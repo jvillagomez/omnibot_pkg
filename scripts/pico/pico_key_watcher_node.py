@@ -3,6 +3,7 @@
 import rospy
 from std_msgs.msg import String
 from subprocess import Popen, PIPE
+import os
 
 orange, green, blue = '0x09','0x0a','0x0b'
 
